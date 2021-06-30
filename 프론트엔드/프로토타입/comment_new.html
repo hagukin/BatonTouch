@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>comment_new</title>
+</head>
+<script src="https://code.jquery.com/jquery-1.12.4.js" 
+integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" 
+crossorigin="anonymous">
+</script>
+<script>
+    var comments =[
+        {
+            idx : 'admin1',
+            comment : '댓글 기능 구현 예제 댓글 1번'
+        },
+        {
+            idx : 'admin2',
+            comment : '댓글 기능 구현 예제 댓글 2번'
+        },
+        {
+            idx : 'admin3',
+            comment : '댓글 기능 구현 예제 댓글 3번'
+        },
+        {
+            idx : 'admin4',
+            comment : '댓글 기능 구현 예제 댓글 4번'
+        },
+        {
+            idx : 'admin5',
+            comment : '댓글 기능 구현 예제 댓글 5번'
+        },
+    ];
+
+    function btn_click(data) {
+        comments.push({
+            idx : 'admin7',
+            comment : data.value
+        });
+
+        $('#user_comment_area').prepend('<li><textarea>'+data.value+'</textarea></li>');
+    }
+
+    $(document).ready(function(){
+        var comment_list_top_idx = 0; // 화면에 출력되어 있는 코멘트 중 가장 높은 인덱스
+        var comment_list_bottom_idx = 0; // 화면에 출력되어 있는 코멘트 중 가장 낮은 인덱스
+        for(var i = 0;i<comments.length;i++){
+            $('#comment_area').prepend('<li><textarea>'+comments[i].comment+'</textarea></li>');
+            
+            if ($('#comment_area').children('li').length > 2) {
+                comment_list_top_idx += 2;
+                break;
+            }
+        }
+
+        $('#btn_confirm').on("click", function(){
+            btn_click(document.getElementById('comment_input'));
+        })
+
+        $('#control_tool_next').on("click", function(){
+            if(comment_list_top_idx == comments.length - 1){
+                console.log('마지막 페이지!');
+                return;
+            }
+
+            comment_list_bottom_idx = comment_list_top_idx + 1;
+            $('#comment_area').empty();
+
+            for (var i = comment_list_bottom_idx; i < comments.length; i++) {
+                $('#comment_area').append('<li><textarea>'+comments[i].comment+'</textarea></li>');
+                comment_list_top_idx++;
+                if ($('#comment_area').children('li').length > 2) {
+                    break;
+                }
+            }
+        })
+
+        $('#control_tool_previous').on("click", function(){
+            if(comment_list_bottom_idx == 0){
+                console.log('첫번째 페이지');
+                return;
+            }
+
+            comment_list_top_idx = comment_list_bottom_idx - 1;
+            $('#comment_area').empty();
+            for (var i = comment_list_top_idx; i >= 0; i--) {
+                $('#comment_area').prepend('<li><textarea>'+comments[i].comment+'</textarea></li>');
+                comment_list_bottom_idx--;
+                if ($('#comment_area').children('li').length > 2) {
+                    break;
+                }
+            }
+        })
+        
+    });
+
+</script> 
+<body>
+    <textarea id="comment_input" name="comment_user_input" cols="30" rows="10">글을 입력하세요</textarea>
+    <input id="btn_confirm" type="button" value="확인">
+    <div>
+        <div id="user_comment_area"></div>
+        <div id="comment_area"></div>
+        <div id="list_control_toolbar">
+            <input id="control_tool_previous" type="button" value="이전">
+            <input id="control_tool_next" type="button" value="다음">
+        </div>
+    </div>
+    
+
+</body>
+</html>
+
