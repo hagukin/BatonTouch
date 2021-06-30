@@ -9,56 +9,72 @@ integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
 crossorigin="anonymous">
 </script>
 <script>
-    var comments =[
+    var comments_list =[
         {
             idx : 'admin1',
-            comment : '댓글 기능 구현 예제 댓글 1번'
+            comment : '댓글 기능 구현 예제 댓글 1번',
+            recommend : 0
         },
         {
             idx : 'admin2',
-            comment : '댓글 기능 구현 예제 댓글 2번'
+            comment : '댓글 기능 구현 예제 댓글 2번',
+            recommend : 10
         },
         {
             idx : 'admin3',
-            comment : '댓글 기능 구현 예제 댓글 3번'
+            comment : '댓글 기능 구현 예제 댓글 3번',
+            recommend : 23
         },
         {
             idx : 'admin4',
-            comment : '댓글 기능 구현 예제 댓글 4번'
+            comment : '댓글 기능 구현 예제 댓글 4번',
+            recommend : 0
         },
         {
             idx : 'admin5',
-            comment : '댓글 기능 구현 예제 댓글 5번'
+            comment : '댓글 기능 구현 예제 댓글 5번',
+            recommend : 2123
         },
     ];
 
-    function btn_click(data) {
-        comments.push({
-            idx : 'admin7',
-            comment : data.value
-        });
-
-        $('#user_comment_area').prepend('<li><textarea>'+data.value+'</textarea></li>');
+    // id="comment_area"에 HTMLElement추가
+    function addElementInCommentArea(comment_list_idx){
+        $('#comment_area').prepend('<li><textarea>'+comments_list[comment_list_idx].comment+'</textarea></li>'
+        +'<input class="btn_comment_recomm" type="button" value='+String(comments_list[comment_list_idx].recommend) +'>');
     }
-
+    
     $(document).ready(function(){
+        const max_comment_list_item = 3; // 한 화면에 출력되는 코멘트 개수
         var comment_list_top_idx = 0; // 화면에 출력되어 있는 코멘트 중 가장 높은 인덱스
         var comment_list_bottom_idx = 0; // 화면에 출력되어 있는 코멘트 중 가장 낮은 인덱스
-        for(var i = 0;i<comments.length;i++){
-            $('#comment_area').prepend('<li><textarea>'+comments[i].comment+'</textarea></li>');
+
+        // 페이지가 로드되었을때 1번 실행 - comment 리스트 출력
+        for(var i = 0;i<comments_list.length;i++){
+            addElementInCommentArea(i);
             
-            if ($('#comment_area').children('li').length > 2) {
-                comment_list_top_idx += 2;
+            if ($('#comment_area').children('li').length > (max_comment_list_item - 1)) {
+                comment_list_top_idx += (max_comment_list_item - 1);
                 break;
             }
         }
-
+        
+        // 이벤트 핸들러 - 사용자 문장 입력에 대한 확인 버튼
         $('#btn_confirm').on("click", function(){
-            btn_click(document.getElementById('comment_input'));
+            var elem = document.getElementById('comment_input');
+
+            comments_list.push({
+            idx : 'admin7',
+            comment : elem.value,
+            recommend : 0,
+            });
+
+            $('#user_comment_area').prepend('<li><textarea>'+elem.value+'</textarea></li>'
+            +'<input class="btn_comment_recomm" type="button" value="0">');
         })
 
+        // 이벤트 핸들러 - 다음 comment 리스트 출력
         $('#control_tool_next').on("click", function(){
-            if(comment_list_top_idx == comments.length - 1){
+            if(comment_list_top_idx == comments_list.length - 1){
                 console.log('마지막 페이지!');
                 return;
             }
@@ -66,15 +82,16 @@ crossorigin="anonymous">
             comment_list_bottom_idx = comment_list_top_idx + 1;
             $('#comment_area').empty();
 
-            for (var i = comment_list_bottom_idx; i < comments.length; i++) {
-                $('#comment_area').append('<li><textarea>'+comments[i].comment+'</textarea></li>');
+            for (var i = comment_list_bottom_idx; i < comments_list.length; i++) {
+                addElementInCommentArea(i);
                 comment_list_top_idx++;
-                if ($('#comment_area').children('li').length > 2) {
+                if ($('#comment_area').children('li').length > (max_comment_list_item - 1)) {
                     break;
                 }
             }
         })
 
+        // 이벤트 핸들러 - 이전 comment 리스트 출력
         $('#control_tool_previous').on("click", function(){
             if(comment_list_bottom_idx == 0){
                 console.log('첫번째 페이지');
@@ -84,15 +101,16 @@ crossorigin="anonymous">
             comment_list_top_idx = comment_list_bottom_idx - 1;
             $('#comment_area').empty();
             for (var i = comment_list_top_idx; i >= 0; i--) {
-                $('#comment_area').prepend('<li><textarea>'+comments[i].comment+'</textarea></li>');
+                addElementInCommentArea(i);
                 comment_list_bottom_idx--;
-                if ($('#comment_area').children('li').length > 2) {
+                if ($('#comment_area').children('li').length > (max_comment_list_item - 1)) {
                     break;
                 }
             }
         })
-        
     });
+
+    
 
 </script> 
 <body>
