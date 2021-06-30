@@ -1,3 +1,5 @@
+# 조하빈 .gitignore 설정
+
 test
 프론트진행사항.md
-.gitignore
+*.gitignore
