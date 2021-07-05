@@ -3,179 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <title>comment_new</title>
+    <link rel="stylesheet" href="comment_new_css.css">
   </head>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script>
-    // 전체 코멘트를 담고 있는 배열
-    var comments_list = [
-      {
-        idx: "admin1",
-        comment: "댓글 기능 구현 예제 댓글 1번",
-        recommend: 1,
-      },
-      {
-        idx: "admin2",
-        comment: "댓글 기능 구현 예제 댓글 2번",
-        recommend: 10,
-      },
-      {
-        idx: "admin3",
-        comment: "댓글 기능 구현 예제 댓글 3번",
-        recommend: 23,
-      },
-      {
-        idx: "admin4",
-        comment: "댓글 기능 구현 예제 댓글 4번",
-        recommend: 0,
-      },
-      {
-        idx: "admin5",
-        comment: "댓글 기능 구현 예제 댓글 5번",
-        recommend: 2123,
-      },
-    ];
-
-    // id="comment_area"에 HTMLElement추가
-    function addElementInCommentArea(comment_list_idx, appending) {
-      if (appending == 1) {
-        $("#comment_area").append("<li><textarea>" + comments_list[comment_list_idx].comment + "</textarea>" + '<input class="btn_comment_recomm" type="button" value=' + String(comments_list[comment_list_idx].recommend) + ' name="' + comments_list[comment_list_idx].idx + '"></li>');
-      } else {
-        $("#comment_area").prepend("<li><textarea>" + comments_list[comment_list_idx].comment + "</textarea>" + '<input class="btn_comment_recomm" type="button" value=' + String(comments_list[comment_list_idx].recommend) + ' name="' + comments_list[comment_list_idx].idx + '"></li>');
-      }
-    }
-
-    // comment_list 코멘트 높은 순으로 정렬
-    function sortCommentList() {
-      comments_list.sort(function (a, b) {
-        if (a.recommend > b.recommend) return -1;
-        if (a.recommend == b.recommend) return 0;
-        if (a.recommend < b.recommend) return 1;
-      });
-    }
-
-    // 사용자 입력 글자수 제한 체크 함수
-    function checkByteOfUserComment(elem) {
-      const max_text_length = 30;
-      var text_value = elem.value;
-      const text_length = elem.value.length;
-      console.log(text_length);
-      if (text_length > 10) {
-        elem.value = text_value.substr(0, max_text_length);
-      }
-    }
-
-    $(document).ready(function () {
-      const max_comment_list_item = 3; // 한 화면에 출력되는 코멘트 개수
-      var comment_list_top_idx = 0; // 화면에 출력되어 있는 코멘트 중 가장 높은 인덱스
-      var comment_list_bottom_idx = 0; // 화면에 출력되어 있는 코멘트 중 가장 낮은 인덱스
-
-      // 페이지가 로드되었을때 1번 실행 - comment 리스트 출력
-      sortCommentList();
-      for (var i = 0; i < comments_list.length; i++) {
-        addElementInCommentArea(i, 1);
-
-        if ($("#comment_area").children("li").length > max_comment_list_item - 1) {
-          comment_list_top_idx += max_comment_list_item - 1;
-          break;
-        }
-      }
-
-      // 이벤트 핸들러 - 사용자 문장 입력에 대한 확인 버튼
-      $("#btn_confirm").on("click", function () {
-        var elem = document.getElementById("comment_input");
-
-        comments_list.push({
-          idx: "admin7",
-          comment: elem.value,
-          recommend: 0,
-        });
-
-        $("#user_comment_area").prepend("<li><textarea>" + elem.value + "</textarea>" + '<input class="btn_comment_recomm" type="button" value="0" name="btn_user_comment_recomm"></li>');
-      });
-
-      // 이벤트 핸들러 - 다음 comment 리스트 출력
-      $("#control_tool_next").on("click", function () {
-        if (comment_list_top_idx == comments_list.length - 1) {
-          console.log("마지막 페이지!");
-          return;
-        }
-
-        comment_list_bottom_idx = comment_list_top_idx + 1;
-        $("#comment_area").empty();
-
-        for (var i = comment_list_bottom_idx; i < comments_list.length; i++) {
-          addElementInCommentArea(i, 1);
-          comment_list_top_idx++;
-          if ($("#comment_area").children("li").length > max_comment_list_item - 1) {
-            break;
-          }
-        }
-      });
-
-      // 이벤트 핸들러 - 이전 comment 리스트 출력
-      $("#control_tool_previous").on("click", function () {
-        if (comment_list_bottom_idx == 0) {
-          console.log("첫번째 페이지");
-          return;
-        }
-
-        comment_list_top_idx = comment_list_bottom_idx - 1;
-        $("#comment_area").empty();
-        for (var i = comment_list_top_idx; i >= 0; i--) {
-          addElementInCommentArea(i, 0);
-          comment_list_bottom_idx--;
-          if ($("#comment_area").children("li").length > max_comment_list_item - 1) {
-            break;
-          }
-        }
-      });
-
-      // 이벤트 핸들러 - 추천 버튼 입력시 추천수 변화
-      $("#comment_area").on("click", "input", function () {
-        var target_comment_list_idx = this.name;
-        for (var i = 0; i < comments_list.length; i++) {
-          if (target_comment_list_idx == comments_list[i].idx) {
-            comments_list[i].recommend++;
-            this.value = String(comments_list[i].recommend);
-            break;
-          }
-        }
-      });
-
-      // 이벤트 핸들러 - comment_input의 글자수가 변경되었을 때
-      $("#comment_input").on("keyup", function () {
-        checkByteOfUserComment(this);
-
-        var text_length = this.value.length;
-        $("#comment_input_length").text(String(text_length) + "자");
-      });
-    });
-  </script>
-
+  <script src="comment_new_code.js"></script>
+  
   <body>
-    <div>
-      <textarea id="comment_input" name="comment_user_input" cols="30" rows="10">글을 입력하세요</textarea>
-      <!-- 문장 입력 창 -->
-      <span id="comment_input_length"></span>
-      <!-- 입력 글자 수 표시 -->
-      <input id="btn_confirm" type="button" value="확인" />
-      <!-- 입력된 문장 등록 -->
-    </div>
-    <div>
-      <!-- 유저가 등록한 댓글 구역 -->
-      유저 코멘트
-      <div id="user_comment_area"></div>
+    <header>
+      <ul id="user_tool_list">
+        <li>login</li>
+        /
+        <li>sign in</li>
+      </ul>
+      <hgroup>
+        <h1 class="title">baton touch</h1>
+        <h2 class="sub_title">모두의 소설 만들기</h2>
+      </hgroup>
+    </header>
+    <nav id="main_menu">
+      <ul class="menu_list">
+        <li>튜토리얼</li>
+        <li>소설 읽기</li>
+        <li>소설 만들기</li>
+      </ul>
+    </nav>
 
-      <!-- 다른 사람들이 등록한 댓글 구역 -->
-      등록된 코멘트
-      <div id="comment_area"></div>
+    <div id="body_wrapper">
+      <div>소설 내용의 일부가 이 글 대신에 들어갈 예정입니다.</div>
+      <div id="u_cbox">
+        <div id="u_cbox_wrapper">
+          <!-- u_cbox에 대한 기본 정보-->
+          <h5 id="u_cbox_title">소설 쓰기</h5>
 
-      <!-- 미확인구역 -->
-      <div id="list_control_toolbar">
-        <input id="control_tool_previous" type="button" value="이전" />
-        <input id="control_tool_next" type="button" value="다음" />
+          <!-- 문장 입력 창 -->
+          <textarea id="u_cbox_write" name="comment_user_input" rows="5">글을 입력하세요</textarea> 
+
+          <!-- 유저와 상호작용하는 도구-->
+          <div id="u_cbox_tool">
+            <span id="u_cbox_length">0자</span>
+            <input id="u_cbox_confirm" type="button" value="확인" /> 
+          </div>
+        </div>
+      </div>
+      <!-- 유저가 등록한 댓글 구역(수정 기능 지원용) -->
+      <div id="u_cbox_devise">
+        유저 코멘트
+        <div id="u_cbox_destination"></div>
+      </div>
+      
+      <div id="cbox">
+        <p id="cbox_title">등록된 코멘트</p>
+        <!-- 다른 사람들이 등록한 댓글 구역 -->
+        <ul id="cbox_destination"></ul>
+      
+        <!-- 페이지 전환 도구 -->
+        <div id="cbox_tool">
+          <input id="cbox_tool_previous" type="button" value="이전" />
+          <input id="cbox_tool_next" type="button" value="다음" />
+        </div>
       </div>
     </div>
+    
   </body>
 </html>
