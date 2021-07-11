@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
 import "./App.css";
 // component
 // import * as CP from "./components";
-import Nav from "./components/Nav";
-import Section from "./components/Section";
-import Footer from "./components/Footer";
+import Nav from "./components/header/Nav";
+import TOC from "./components/header/TOC"
+import Section from "./components/readNovel/Section";
+import Footer from "./components/readNovel/Footer";
+import WriteNovel from "./components/writeNovel/writeNovel";
 // json
 import _commentsJson from "./data/comments.json";
 // function
@@ -21,8 +24,15 @@ class App extends Component {
     var comment_list = Myfunc.loadcommentsJsonToList(this.state.commentsJson);
     return (
       <div className="grid_container">
-        <Nav></Nav>
-        <Section content={comment_list}></Section>
+        <Route path="/">
+          <TOC></TOC>
+        </Route>
+        <Route path="/readNovel">
+          <Section content={comment_list}></Section>
+        </Route>
+        <Route path="/writeNovel">
+          <WriteNovel></WriteNovel>
+        </Route>
         <Footer></Footer>
       </div>
     );

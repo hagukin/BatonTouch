@@ -1,5 +1,5 @@
-import SentenceBox from "../components/SentenceBox.js";
-import RecommendButton from "../components/RecommendButton.js";
+import SentenceBox from "../components/readNovel/SentenceBox";
+import RecommendButton from "../components/readNovel/RecommendButton";
 
 // Json객체로부터 데이터 불러오는 함수
 export function loadcommentsJsonToList(comments) {
