@@ -16,21 +16,40 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-#header {
-  /* flex setting */
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-
+header {
   border: solid 3px purple;
+}
+
+ul {
+  /* flex setting */
+
   /* height: 50px; */
 }
 
 .selectmode {
-  flex-basis: 100px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
 
+  padding: 0;
   text-align: center;
+}
+
+.selectmode li {
+  list-style: none;
+  display: inline;
+  margin-inline: 20px;
+  text-decoration: none;
+}
+
+.selectmode :nth-child(1) {
+  /* margin-left: 50px; */
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 #about {
@@ -53,7 +72,9 @@ body {
 #footer {
   align-self: end;
   border: solid 3px red;
-  height: 100px;
+  height: 50px;
+  text-align: center;
+  padding-top: 30px;
 }
 
 .SentenceFlex {
@@ -66,4 +87,10 @@ body {
   background-color: transparent;
   border: 0;
   resize: none;
+  text-align: center;
+}
+
+.SentenceFlex input {
+  background-color: transparent;
+  border: 0;
 }

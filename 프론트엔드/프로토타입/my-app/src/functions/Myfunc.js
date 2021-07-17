@@ -9,7 +9,7 @@ export function loadcommentsJsonToList(comments) {
       comment_list.push(
         <div key={key} className="SentenceFlex">
           <SentenceBox content={comments[key].contents}></SentenceBox>
-          <RecommendButton fixed={true} value={comments[key].recommend}></RecommendButton>
+          <RecommendButton fixed={false} value={comments[key].recommend}></RecommendButton>
         </div>
       );
     }

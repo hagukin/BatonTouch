@@ -4,7 +4,7 @@ import "./App.css";
 // component
 // import * as CP from "./components";
 import Nav from "./components/header/Nav";
-import TOC from "./components/header/TOC"
+import TOC from "./components/header/TOC";
 import Section from "./components/readNovel/Section";
 import Footer from "./components/readNovel/Footer";
 import WriteNovel from "./components/writeNovel/writeNovel";
@@ -23,9 +23,11 @@ class App extends Component {
   render() {
     var comment_list = Myfunc.loadcommentsJsonToList(this.state.commentsJson);
     return (
-      <div className="grid_container">
+      <div className="App grid_container">
         <Route path="/">
-          <TOC></TOC>
+          <header>
+            <TOC></TOC>
+          </header>
         </Route>
         <Route path="/readNovel">
           <Section content={comment_list}></Section>

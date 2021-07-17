@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 // 추천수 버튼
-
 class RecommendButton extends Component {
   constructor(props) {
     super(props);
