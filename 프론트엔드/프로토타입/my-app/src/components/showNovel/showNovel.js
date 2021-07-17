@@ -22,6 +22,7 @@ class ShowNovel extends Component{
                 writeMain:this.state.novelList[i].contents,
                 writeCmt:"임시 주석",
                 recomm: this.state.novelList[i].recommend,
+                id:this.state.novelList[i].id,
             })
         }
         return(

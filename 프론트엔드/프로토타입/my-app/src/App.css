@@ -9,6 +9,25 @@ body {
   margin: 0;
 }
 
+header {
+  border: solid 3px purple;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul{
+  -webkit-padding-start: 0px;
+}
+
+textarea{
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 20px;
+}
+
 .grid_container {
   height: 100%;
   display: grid;
@@ -16,40 +35,13 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-header {
-  border: solid 3px purple;
-}
-
-ul {
-  /* flex setting */
-
-  /* height: 50px; */
-}
-
-.selectmode {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: stretch;
-
-  padding: 0;
-  text-align: center;
-}
-
-.selectmode li {
-  list-style: none;
+.selectmode li{
   display: inline;
-  margin-inline: 20px;
-  text-decoration: none;
+  padding: 0px 10px;
 }
 
-.selectmode :nth-child(1) {
-  /* margin-left: 50px; */
-}
-
-a {
-  text-decoration: none;
-  color: black;
+.topwrapper{
+  text-align: right;
 }
 
 #about {
@@ -60,14 +52,6 @@ a {
   text-align: center;
 }
 
-#nothing {
-  flex: 1 1 auto;
-}
-
-#sect {
-  border: solid 3px green;
-  /* height: 200px; */
-}
 
 #footer {
   align-self: end;
@@ -75,22 +59,9 @@ a {
   height: 50px;
   text-align: center;
   padding-top: 30px;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 25px;
 }
 
-.SentenceFlex {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-}
 
-.SentenceFlex textarea {
-  background-color: transparent;
-  border: 0;
-  resize: none;
-  text-align: center;
-}
-
-.SentenceFlex input {
-  background-color: transparent;
-  border: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');

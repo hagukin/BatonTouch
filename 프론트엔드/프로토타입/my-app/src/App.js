@@ -22,6 +22,10 @@ class App extends Component {
       <div className="App grid_container">
         <Route path="/">
           <header>
+            <div className="topwrapper">
+              <span id="loginNav">login / sign in</span> 
+            </div>
+            <h1 id="HomepageTitle">BatonTouch</h1>
             <TOC></TOC>
           </header>
         </Route>
