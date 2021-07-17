@@ -5,8 +5,8 @@ import "./App.css";
 // import * as CP from "./components";
 import TOC from "./components/header/TOC";
 import Footer from "./components/readNovel/Footer";
-import WriteNovel from "./components/writeNovel/writeNovel";
 import ShowNovel from "./components/showNovel/showNovel";
+import Novel from "./components/Novel/Novel";
 // json
 import _commentsJson from "./data/comments.json";
 
@@ -33,7 +33,7 @@ class App extends Component {
           <ShowNovel></ShowNovel>
         </Route>
         <Route path="/writeNovel">
-          <WriteNovel></WriteNovel>
+          <Novel></Novel>
         </Route>
         <Footer></Footer>
       </div>
