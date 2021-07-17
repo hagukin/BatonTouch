@@ -1,26 +1,18 @@
 import React, {Component} from 'react';
-import UCbox from './user_cbox'
-import CboxList from './cbox_list'
+import UCbox from './user_cbox';
+import CboxList from './cbox_list';
+
+// json data
+import cbox_list_data from '../../data/cbox_list.json';
+import user_cbox_data from '../../data/user_cbox.json';
 
 class WriteNovel extends Component{
   constructor(props){
     super(props);
     this.state = {
       uCboxMode:"write",
-      sample_cbox:{
-        id:"admin1",
-        writeMain:"본문 예제 1번",
-        writeCmt:"주석 예제 1번"
-      },
-      sample_cbox_list: [
-        {id:"admin2", writeMain:"본문 예제 2번", writeCmt:"주석 예제 2번", recomm:10},
-        {id:"admin3", writeMain:"본문 예제 3번", writeCmt:"주석 예제 3번", recomm:25},
-        {id:"admin4", writeMain:"본문 예제 4번", writeCmt:"주석 예제 4번", recomm:7},
-        {id:"admin5", writeMain:"본문 예제 5번", writeCmt:"주석 예제 5번", recomm:99},
-        {id:"admin6", writeMain:"본문 예제 6번", writeCmt:"주석 예제 6번", recomm:301},
-        {id:"admin7", writeMain:"본문 예제 7번", writeCmt:"주석 예제 7번", recomm:7},
-        {id:"admin8", writeMain:"본문 예제 8번", writeCmt:"주석 예제 8번", recomm:0},
-      ]
+      sample_cbox: user_cbox_data,
+      sample_cbox_list: cbox_list_data,
     }
   }
   render() {
