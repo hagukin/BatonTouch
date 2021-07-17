@@ -9,7 +9,7 @@ class SentenceBox extends Component {
   // }
 
   render() {
-    return <textarea readOnly cols={140} rows={1} value={this.props.content}></textarea>;
+    return <textarea readOnly cols={140} rows={1} value={this.props.content} onMouseOver></textarea>;
   }
 }
 
