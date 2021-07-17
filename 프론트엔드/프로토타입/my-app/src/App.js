@@ -3,15 +3,12 @@ import { Route } from "react-router-dom";
 import "./App.css";
 // component
 // import * as CP from "./components";
-import Nav from "./components/header/Nav";
 import TOC from "./components/header/TOC";
-import Section from "./components/readNovel/Section";
 import Footer from "./components/readNovel/Footer";
 import WriteNovel from "./components/writeNovel/writeNovel";
+import ShowNovel from "./components/showNovel/showNovel";
 // json
 import _commentsJson from "./data/comments.json";
-// function
-import * as Myfunc from "./functions/Myfunc.js";
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +18,6 @@ class App extends Component {
     };
   }
   render() {
-    var comment_list = Myfunc.loadcommentsJsonToList(this.state.commentsJson);
     return (
       <div className="App grid_container">
         <Route path="/">
@@ -30,7 +26,7 @@ class App extends Component {
           </header>
         </Route>
         <Route path="/readNovel">
-          <Section content={comment_list}></Section>
+          <ShowNovel></ShowNovel>
         </Route>
         <Route path="/writeNovel">
           <WriteNovel></WriteNovel>
