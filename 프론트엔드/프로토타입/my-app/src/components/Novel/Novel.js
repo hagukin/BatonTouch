@@ -3,13 +3,19 @@ import CboxList from './cbox_list';
 // data
 import novelListData from '../../data/comments.json'
 
-class VoteNovel extends Component{
+
+/*
+props
+1. rows : textarea rows 프로퍼티에 할당될 값
+2. cols : textarea cols 프로퍼티에 할당될 값
+ */
+class Novel extends Component{
     constructor(props){
         super(props);
         this.state = {
             novelList : novelListData,
-            cboxRows : 1,
-            cboxCols : 140,
+            cboxRows : this.props.rows,
+            cboxCols : this.props.cols,
         }
     }
     render(){
@@ -31,4 +37,4 @@ class VoteNovel extends Component{
     }
 }
 
-export default VoteNovel;
+export default Novel;
