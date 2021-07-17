@@ -52,7 +52,7 @@ class UCbox extends Component {
     }
 
     return (
-      <div>
+      <div className="user_comment_wrapper">
         {cboxText}
         <button onClick={this.handleSubmit}>{this.props.btnMode}</button>
         <button onClick={this.btnCmtClick}>현 상태:{this.state.isCmtOn ? "주석" : "본문"}</button>

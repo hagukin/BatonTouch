@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import Cbox from './simple_cbox';
+import React, { Component } from "react";
+import Cbox from "./simple_cbox";
 
 /*
 simple_cbox의 집합을 관리하는 컴포넌트 입니다.
@@ -12,34 +12,23 @@ props
 
 2. cboxOnPage: 한페이지에 나타낼 Cbox의 수를 정의하는 정수입니다.
 */
-class CboxList extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            cboxContents: this.props.initialContent,
-            cboxOnPage: this.props.cboxOnPage,
-        }
+class CboxList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cboxContents: this.props.initialContent,
+      cboxOnPage: this.props.cboxOnPage,
+    };
+  }
+
+  render() {
+    var CboxList = [];
+    for (var i = 0; i < this.state.cboxContents.length; i++) {
+      CboxList.push(<Cbox key={this.state.cboxContents[i].id} Main={this.state.cboxContents[i].writeMain} Cmt={this.state.cboxContents[i].writeCmt} Recomm={this.state.cboxContents[i].recomm} cols={this.props.cols} rows={this.props.rows}></Cbox>);
     }
 
-    render(){
-        var CboxList = [];
-        for(var i = 0; i<this.state.cboxContents.length;i++){
-            CboxList.push(<Cbox 
-                key={this.state.cboxContents[i].id} 
-                Main={this.state.cboxContents[i].writeMain} 
-                Cmt={this.state.cboxContents[i].writeCmt}
-                Recomm={this.state.cboxContents[i].recomm}
-                cols={this.props.cols}
-                rows={this.props.rows}
-                ></Cbox>);
-        }
-        
-        return(
-            <div>
-                {CboxList}
-            </div>
-        );
-    }
+    return <div className="hhahh">{CboxList}</div>;
+  }
 }
 
 export default CboxList;

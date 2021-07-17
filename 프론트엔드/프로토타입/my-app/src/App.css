@@ -19,13 +19,14 @@ a {
   color: black;
 }
 
-ul{
+ul {
   -webkit-padding-start: 0px;
 }
 
-textarea{
-  font-family: 'Nanum Pen Script', cursive;
+textarea {
+  font-family: "Nanum Pen Script", cursive;
   font-size: 20px;
+  text-align: center;
 }
 
 .grid_container {
@@ -35,13 +36,45 @@ textarea{
   grid-template-rows: auto 1fr auto;
 }
 
-.selectmode li{
+.selectmode li {
   display: inline;
   padding: 0px 10px;
 }
 
-.topwrapper{
+.topwrapper {
   text-align: right;
+}
+
+.comment_wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.comment_wrapper textarea {
+  flex-basis: 800px;
+  background-color: transparent;
+  border: none;
+  resize: none;
+}
+
+.user_comment_wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.user_comment_wrapper textarea {
+  flex-basis: 700px;
+  resize: none;
+}
+
+button {
+  background-color: lightskyblue;
+  border-radius: 15px;
+  border: none;
 }
 
 #about {
@@ -52,16 +85,14 @@ textarea{
   text-align: center;
 }
 
-
 #footer {
   align-self: end;
   border: solid 3px red;
   height: 50px;
   text-align: center;
   padding-top: 30px;
-  font-family: 'Nanum Pen Script', cursive;
+  font-family: "Nanum Pen Script", cursive;
   font-size: 25px;
 }
 
-
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
