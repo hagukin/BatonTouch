@@ -12,6 +12,8 @@ props
 
 5. id: key와 같은 id값을 가져옵니다.
 -> 어느 Cbox에서 recomm의 변화가 일어났는지를 상위 컴포넌트들에 알리기 위해서 존재합니다.
+
+6.rows, cols: textarea의 rows,cols 프로퍼티
 */
 
 class Cbox extends Component{
@@ -40,7 +42,7 @@ class Cbox extends Component{
         }
         return(
             <div>
-                <textarea value={TextValue} readOnly></textarea>
+                <textarea value={TextValue} readOnly rows={this.props.rows} cols={this.props.cols}></textarea>
                 <button onClick={function(event){
                     this.props.onRecommClick(this.props.id);
                 }.bind(this)}>{this.props.Recomm}</button>

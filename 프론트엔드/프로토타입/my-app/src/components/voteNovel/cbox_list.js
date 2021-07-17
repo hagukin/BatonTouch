@@ -18,6 +18,8 @@ props
 
 4. onRecommClick: 추천수의 변화를 상위 컴포넌트에 알립니다.
 -> 상위 컴포넌트의 state중 recomm에 관한 정보를 저장하는 배열을 수정합니다.
+
+5. 하위 컴포넌트에 줄 rows, cols: textarea의 rows,cols 프로퍼티
 */
 class CboxList extends Component{
     constructor(props){
@@ -83,6 +85,8 @@ class CboxList extends Component{
                 Main={this.state.cboxContents[i].writeMain} 
                 Cmt={this.state.cboxContents[i].writeCmt}
                 Recomm={this.state.cboxContents[i].recomm}
+                rows={this.props.rows}
+                cols={this.props.cols}
                 onRecommClick={function(id){
                     this.props.onRecommClick(id,this.state.firstIdx,this.state.lastIdx);
                 }.bind(this)}></Cbox>);
