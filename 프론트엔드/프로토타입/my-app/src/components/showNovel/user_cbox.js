@@ -54,8 +54,8 @@ class UCbox extends Component {
     return (
       <div className="user_comment_wrapper">
         {cboxText}
-        <button onClick={this.handleSubmit}>{this.props.btnMode}</button>
-        <button onClick={this.btnCmtClick}>현 상태:{this.state.isCmtOn ? "주석" : "본문"}</button>
+        <button id="user_confirm_btn" onClick={this.handleSubmit}>{this.props.btnMode}</button>
+        <button className="change_write_mode_btn" onClick={this.btnCmtClick}>현 상태:{this.state.isCmtOn ? "주석" : "본문"}</button>
       </div>
     );
   }

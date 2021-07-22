@@ -29,6 +29,20 @@ textarea {
   text-align: center;
 }
 
+button {
+  background-color: lightskyblue;
+  border-radius: 2px;
+  border: none;
+}
+
+.ShowNovel{
+  margin-left: 9%;
+}
+
+.VoteNovel{
+  margin-left: 9%;
+}
+
 .grid_container {
   height: 100%;
   display: grid;
@@ -49,7 +63,7 @@ textarea {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
 }
 
 .comment_wrapper textarea {
@@ -63,18 +77,70 @@ textarea {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
 }
 
 .user_comment_wrapper textarea {
-  flex-basis: 700px;
+  flex-basis: 800px;
   resize: none;
+  background-color: transparent;
+  border: none;
 }
 
-button {
-  background-color: lightskyblue;
-  border-radius: 15px;
+.recomm_btn{
+  font-size: 10px;
+  height: 20px;
+  width: 40px;
+  background-color: white;
+  border: solid  2px skyblue;
+  margin: 0 2px;
+}
+
+.change_write_mode_btn{
+  width: 100px;
+  font-size: 10px;
+  height: 20px;
+  background-color: white;
+  border: solid 2px skyblue;
+}
+
+.vote_novel_wrapper{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center; 
+  align-items: center;
+  width: 1000px;
+}
+
+.vote_novel_wrapper textarea{
+  flex-basis: 800px;
+  resize: none;
+  background-color: transparent;
   border: none;
+}
+
+.vote_novel_tool_wrapper{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_cbox_btn{
+  font-size: 10px;
+  width: 40px;
+  height: 20px;
+  background-color: white;
+  border: solid 2px rgb(146, 55, 55);
+}
+
+#user_confirm_btn{
+  font-size: 10px;
+  height: 20px;
+  width: 40px;
+  background-color: white;
+  border: solid  2px skyblue;
+  margin: 0 2px;
 }
 
 #about {

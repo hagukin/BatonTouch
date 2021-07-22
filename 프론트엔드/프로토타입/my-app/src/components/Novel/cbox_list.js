@@ -27,7 +27,7 @@ class CboxList extends Component {
       CboxList.push(<Cbox key={this.state.cboxContents[i].id} Main={this.state.cboxContents[i].writeMain} Cmt={this.state.cboxContents[i].writeCmt} Recomm={this.state.cboxContents[i].recomm} cols={this.props.cols} rows={this.props.rows}></Cbox>);
     }
 
-    return <div className="hhahh">{CboxList}</div>;
+    return <div>{CboxList}</div>;
   }
 }
 

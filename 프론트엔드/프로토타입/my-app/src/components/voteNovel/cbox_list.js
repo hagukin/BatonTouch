@@ -92,12 +92,12 @@ class CboxList extends Component{
                 }.bind(this)}></Cbox>);
         }
         return(
-            <div>
+            <div className="vote_novel_tool_wrapper">
+                <button className="search_cbox_btn" onClick={this.onBtnPrevClick}>이전</button>
                 {CboxList}
-                <button onClick={this.onBtnPrevClick}>이전</button>
-                <button onClick={this.onBtnNextClick}>다음</button>
+                <button className="search_cbox_btn" onClick={this.onBtnNextClick}>다음</button>
             </div>
-        );
+        );  
     }
 }
 

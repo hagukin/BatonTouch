@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import CboxList from "./cbox_list";
+import Novel from "../Novel/Novel";
 
 // json data
 import cbox_list_data from "../../data/cbox_list.json";
-import Novel from "../Novel/Novel";
 
 class VoteNovel extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class VoteNovel extends Component {
     
 
     return (
-      <div>
+      <div className="VoteNovel">
         <Novel rows={this.state.rows} cols={this.state.cols}></Novel>
         <CboxList
           cboxListMaxIdx={this.state.sample_cbox_list.length - 1}

@@ -41,12 +41,12 @@ class Cbox extends Component{
             TextValue = this.state.cmtValue;
         }
         return(
-            <div>
+            <div className="vote_novel_wrapper">
                 <textarea value={TextValue} readOnly rows={this.props.rows} cols={this.props.cols}></textarea>
-                <button onClick={function(event){
+                <button className="recomm_btn" onClick={function(event){
                     this.props.onRecommClick(this.props.id);
                 }.bind(this)}>{this.props.Recomm}</button>
-                <button onClick={this.btnCmtClick}>현 상태:{this.state.isCmtOn ? '주석' : '본문'}</button>
+                <button className="change_write_mode_btn" onClick={this.btnCmtClick}>현 상태:{this.state.isCmtOn ? '주석' : '본문'}</button>
             </div>
         );
     }
