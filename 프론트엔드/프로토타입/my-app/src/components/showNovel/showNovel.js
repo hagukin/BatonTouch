@@ -38,30 +38,6 @@ class ShowNovel extends Component {
       </div>
     );
   }
-  // return (
-  //   <div className="NovelArea_wrapper">
-  //     <CboxList initialContent={formalList} cboxOnPage={formalList.length} cols={this.state.cboxCols} rows={this.state.cboxRows}></CboxList>
-  //     <UCbox
-  //       mainData={userData.mainValue}
-  //       cmtData={userData.cmtValue}
-  //       rows={this.state.cboxRows}
-  //       cols={this.state.cboxCols}
-  //       btnMode={this.state.userMode}
-  //       onSubmit={function () {
-  //         if (this.state.userMode === "확인") {
-  //           this.setState({
-  //             userMode: "수정",
-  //           });
-  //         } else {
-  //           this.setState({
-  //             userMode: "확인",
-  //           });
-  //         }
-  //       }.bind(this)}
-  //     ></UCbox>
-  //   </div>
-  // );
-  //   }
 }
 
 export default ShowNovel;
