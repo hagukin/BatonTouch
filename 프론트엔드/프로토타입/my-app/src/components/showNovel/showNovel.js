@@ -15,7 +15,7 @@ class ShowNovel extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="ShowNovel">
         <Novel cols={this.state.cboxCols} rows={this.state.cboxRows}></Novel>
         <UCbox
           mainData={userData.mainValue}

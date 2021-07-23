@@ -37,8 +37,8 @@ class Cbox extends Component {
     return (
       <div className="comment_wrapper">
         <textarea value={TextValue} readOnly cols={this.props.cols} rows={this.props.rows}></textarea>
-        <button>{this.props.Recomm}</button>
-        <button onClick={this.btnCmtClick}>현 상태:{this.state.isCmtOn ? "주석" : "본문"}</button>
+        <button className="recomm_btn">{this.props.Recomm}</button>
+        <button className="change_write_mode_btn" onClick={this.btnCmtClick}>현 상태:{this.state.isCmtOn ? "주석" : "본문"}</button>
       </div>
     );
   }
