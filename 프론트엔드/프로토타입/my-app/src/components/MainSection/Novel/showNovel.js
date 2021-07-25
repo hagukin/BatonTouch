@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import UCbox from "./user_cbox";
 // data
-import userData from "../../data/user_cbox.json";
+import userData from "../../../data/user_cbox.json";
 import Novel from "../Novel/Novel";
 
 class ShowNovel extends Component {

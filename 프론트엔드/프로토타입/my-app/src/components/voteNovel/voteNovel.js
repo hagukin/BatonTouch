@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CboxList from "./cbox_list";
-import Novel from "../Novel/Novel";
+import Novel from "../MainSection/Novel/Novel";
 
 // json data
 import cbox_list_data from "../../data/cbox_list.json";
@@ -11,7 +11,7 @@ class VoteNovel extends Component {
     this.state = {
       sample_cbox_list: cbox_list_data,
       rows: 1,
-      cols: 140
+      cols: 140,
     };
   }
   render() {
@@ -24,7 +24,6 @@ class VoteNovel extends Component {
         break;
       }
     }
-    
 
     return (
       <div className="VoteNovel">
