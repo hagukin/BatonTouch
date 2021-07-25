@@ -2,6 +2,7 @@ import React from "react";
 import InputSentenceBox from "./InputSentenceBox";
 import ReadSentenceArea from "./ReadSentenceArea";
 import VoteSentenceBox from "./VoteSentenceBox";
+import {Route} from "react-router-dom";
 
 class Novel extends React.Component {
   constructor(props) {
@@ -19,9 +20,15 @@ class Novel extends React.Component {
   render() {
     return (
       <div>
-        <ReadSentenceArea data={this.state.fixedNovelData} />
-        <InputSentenceBox onAddSub={this.handleAddSub} />
-        <VoteSentenceBox onAddRecommend={this.handleAddRecommend} data={this.state.subNovelData} />
+        <Route path="/">
+          <ReadSentenceArea data={this.state.fixedNovelData} />
+        </Route>
+        <Route path="/write">
+          <InputSentenceBox onAddSub={this.handleAddSub} />
+        </Route>
+        <Route path="/vote">
+          <VoteSentenceBox onAddRecommend={this.handleAddRecommend} data={this.state.subNovelData} />
+        </Route>
       </div>
     );
   }

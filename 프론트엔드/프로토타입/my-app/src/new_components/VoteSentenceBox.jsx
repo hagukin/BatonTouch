@@ -21,13 +21,13 @@ class VoteSentenceBox extends React.Component {
 
   handleSearchSentence = (direction) => {
     if (direction === "next") {
-      if (this.state.selectedId.slice(4) != this.props.data.length - 1) {
+      if (this.state.selectedId.slice(4) !== String(this.props.data.length - 1)) {
         this.setState((prevState) => ({
           selectedId: "sub_" + (parseInt(prevState.selectedId.slice(4)) + 1),
         }));
       }
     } else if (direction === "prev") {
-      if (this.state.selectedId.slice(4) != 0) {
+      if (this.state.selectedId.slice(4) !== '0') {
         this.setState((prevState) => ({
           selectedId: "sub_" + (parseInt(prevState.selectedId.slice(4)) - 1),
         }));

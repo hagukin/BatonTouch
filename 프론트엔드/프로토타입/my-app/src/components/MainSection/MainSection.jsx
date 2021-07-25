@@ -9,7 +9,7 @@ class MainSection extends React.Component {
   render() {
     return (
       <div>
-        {this.props.mode == "read" && <Novel />}
+        {this.props.mode == "read" && <Show />}
         {this.props.mode == "vote" && <Vote />}
       </div>
     );
