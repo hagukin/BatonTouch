@@ -1,0 +1,9 @@
+.ReadSentenceArea{
+    text-align: center;
+}
+
+.Sentence{
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');

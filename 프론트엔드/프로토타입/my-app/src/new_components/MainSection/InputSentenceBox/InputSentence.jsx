@@ -1,7 +1,7 @@
 import React from "react";
 class InputSentence extends React.Component {
   render() {
-    return <input value={this.props.text} onChange={this.handleOnChange} />;
+    return <input className="InputSentence" value={this.props.text} onChange={this.handleOnChange} />;
   }
 
   handleOnChange = (e) => {

@@ -2,7 +2,7 @@ import React from "react";
 
 class Sentence extends React.Component {
   render() {
-    return <p>{this.props.text}</p>;
+    return <p className="Sentence">{this.props.text}</p>;
   }
 }
 
