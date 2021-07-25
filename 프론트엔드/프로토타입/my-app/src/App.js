@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 // component
-import Novel from "./new_components/Novel";
+import Novel from "./new_components/MainSection/Novel";
 import { BrowserRouter } from "react-router-dom";
-import Nav from "./new_components/Nav";
+import Nav from "./new_components/Header/Nav";
 
 class App extends Component {
   constructor(props) {

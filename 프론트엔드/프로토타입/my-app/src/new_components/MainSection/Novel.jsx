@@ -1,8 +1,8 @@
 import React from "react";
-import InputSentenceBox from "./InputSentenceBox";
-import ReadSentenceArea from "./ReadSentenceArea";
-import VoteSentenceBox from "./VoteSentenceBox";
-import {Route} from "react-router-dom";
+import InputSentenceBox from "./InputSentenceBox/InputSentenceBox";
+import ReadSentenceArea from "./ReadSentenceArea/ReadSentenceArea";
+import VoteSentenceBox from "./VoteSentenceBox/VoteSentenceBox";
+import { Route } from "react-router-dom";
 
 class Novel extends React.Component {
   constructor(props) {
