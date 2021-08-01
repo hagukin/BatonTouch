@@ -5,7 +5,14 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
             'id',
+            'writer',
             'title',
             'content',
+            'comment',
+            'date',
+            'upvote',
+            'downvote',
+            'position',
+            'end_story'
         )
         model = Post
