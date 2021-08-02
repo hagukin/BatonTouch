@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework import generics, status
 from rest_framework.response import Response
 
-from .models import Post
-from .serializers import PostSerializer
+from .models import Post, ElectedPost
+from .serializers import PostSerializer, NovelSerializer
 
 class ListPost(generics.ListCreateAPIView):
     queryset = Post.objects.all()
@@ -12,6 +12,10 @@ class ListPost(generics.ListCreateAPIView):
 class DetailPost(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+class Novel(generics.ListCreateAPIView):
+    queryset = ElectedPost.objects.all()
+    serializer_class = NovelSerializer
 
 from rest_framework.views import APIView
 class PostAPIView(APIView):

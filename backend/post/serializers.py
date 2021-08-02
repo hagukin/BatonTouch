@@ -16,3 +16,7 @@ class PostSerializer(serializers.ModelSerializer):
             'end_story'
         )
         model = Post
+
+class NovelSerializer(PostSerializer):
+    """PostSerializer과 동일"""
+    pass

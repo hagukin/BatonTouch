@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.ListPost.as_view()),
     path('<int:pk>/', views.DetailPost.as_view()),
     path('experimental/', views.PostAPIView.as_view()),
+    path('novel/', views.Novel.as_view())
 ]

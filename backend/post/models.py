@@ -25,3 +25,7 @@ class Post(models.Model):
     def __str__(self):
         """A string representation of the model."""
         return self.title
+
+class ElectedPost(Post):
+    """Post와 구조적으로 동일."""
+    pass
