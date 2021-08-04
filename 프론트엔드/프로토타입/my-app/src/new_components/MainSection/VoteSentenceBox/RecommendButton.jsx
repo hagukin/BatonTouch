@@ -3,8 +3,9 @@ class RecommendButton extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
-    return <button onClick={this.handleOnClick}>추천</button>;
+    return <button onClick={this.handleOnClick}>👍{this.props.recommend}</button>;
   }
 
   handleOnClick = () => {

@@ -1,16 +1,39 @@
 import React from "react";
 import Sentence from "./Sentence";
-import './ReadSentenceArea.css';
+import "./ReadSentenceArea.css";
 
 class ReadSentenceArea extends React.Component {
   render() {
-    return (
-      <div className="ReadSentenceArea">
-        {this.props.data.map((obj) => (
-          <Sentence key={obj.id} text={obj.text} />
-        ))}
-      </div>
-    );
+    if (!this.props.show) {
+      return (
+        <div className="ReadSentenceArea">
+          {this.props.data.map((obj) => (
+            <Sentence key={obj.id} text={obj.content} />
+          ))}
+        </div>
+      );
+    } else {
+      // console.log(this.props.data);
+      // let sentenceList = [];
+      // for (let i = this.props.show; i > 0; i--) {
+      //   if (!this.props.data[-i]) {
+      //     debugger;
+      //     console.log(this.props.data[-i].text);
+      //     sentenceList.push(<Sentence key={this.props.data[-i].id} text={this.props.data[-i].text} />);
+      //   }
+      // }
+      return (
+        <div className="ReadSentenceArea">
+          <Sentence text={"."} />
+          <Sentence text={"."} />
+          <Sentence text={"."} />
+          {this.props.data.slice(this.props.data.length - this.props.show).map((obj) => (
+            <Sentence key={obj.id} text={obj.content} />
+          ))}
+          {/* {sentenceList} */}
+        </div>
+      );
+    }
   }
 }
 

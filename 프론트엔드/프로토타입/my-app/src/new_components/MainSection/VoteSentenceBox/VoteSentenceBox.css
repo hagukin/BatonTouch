@@ -1,0 +1,14 @@
+.VoteSentenceBox {
+  display: flex;
+  margin-bottom: 0px;
+}
+
+.VoteSentenceBox button {
+  border: none;
+  background: none;
+}
+
+.VoteSentenceBox p {
+  display: inline;
+  margin: 0;
+}

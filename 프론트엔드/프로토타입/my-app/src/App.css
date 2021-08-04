@@ -2,17 +2,23 @@ html {
   height: 100%;
 }
 
+.App {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+
 body {
-  background-color: wheat;
+  background-color: RGB(250, 251, 253);
   height: 100%;
   /* border: solid 3px brown; */
   margin: 0;
 }
 
-button{
+button {
   width: 50px;
   font-size: 10px;
   height: 20px;
   background-color: white;
-  border: solid 2px skyblue
+  border: solid 2px skyblue;
 }

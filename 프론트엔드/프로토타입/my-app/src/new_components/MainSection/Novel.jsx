@@ -2,32 +2,46 @@ import React from "react";
 import InputSentenceBox from "./InputSentenceBox/InputSentenceBox";
 import ReadSentenceArea from "./ReadSentenceArea/ReadSentenceArea";
 import VoteSentenceBox from "./VoteSentenceBox/VoteSentenceBox";
+import VoteSentenceArea from "./VoteSentenceArea/VoteSentenceArea";
 import { Route } from "react-router-dom";
-
+import data from "./_data.json";
+import "./Novel.css";
 class Novel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fixedNovelData: [
-        { text: "hello", recommend: 10, id: "fixed_0" },
-        { text: "joonsuk", recommend: 10, id: "fixed_1" },
-        { text: "king", recommend: 99, id: "fixed_2" },
+      fixedNovelData: data,
+      subNovelData: [
+        {
+          id: 1,
+          writer: "",
+          title: "mysql1",
+          content: "1",
+          comment: "",
+          date: "2021-08-01T11:30:57.618483Z",
+          upvote: 0,
+          downvote: 0,
+          position: 0,
+          end_story: false,
+        },
       ],
-      subNovelData: [{ text: "hello", recommend: 10, id: "sub_0" }],
     };
   }
 
   render() {
     return (
-      <div>
-        <Route path="/">
+      <div className="Novel">
+        <Route path="/main">
           <ReadSentenceArea data={this.state.fixedNovelData} />
         </Route>
-        <Route path="/write">
-          <InputSentenceBox onAddSub={this.handleAddSub} />
+        <Route path="/read">
+          <ReadSentenceArea data={this.state.fixedNovelData} />
         </Route>
-        <Route path="/vote">
-          <VoteSentenceBox onAddRecommend={this.handleAddRecommend} data={this.state.subNovelData} />
+        <Route path="/contribute">
+          <ReadSentenceArea show={5} data={this.state.fixedNovelData} />
+          <InputSentenceBox onAddSub={this.handleAddSub} />
+          {/* <VoteSentenceBox onAddRecommend={this.handleAddRecommend} data={this.state.subNovelData} /> */}
+          <VoteSentenceArea data={this.state.subNovelData} />
         </Route>
       </div>
     );
@@ -36,7 +50,17 @@ class Novel extends React.Component {
   handleAddSub = (_text) => {
     // subNovelData에 _text에 대응하는 객체 추가
     this.setState((prevState) => ({
-      subNovelData: prevState.subNovelData.concat({ text: _text, recommend: 0, id: "sub_" + prevState.subNovelData.length }),
+      subNovelData: prevState.subNovelData.concat({
+        writer: "",
+        title: "mysql1",
+        date: new Date(),
+        upvote: 0,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+        content: _text,
+        id: "sub_" + prevState.subNovelData.length,
+      }),
     }));
   };
 

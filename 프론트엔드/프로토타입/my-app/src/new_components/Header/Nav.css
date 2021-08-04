@@ -1,0 +1,17 @@
+.Nav ul {
+  /* flex */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+
+  padding: 0;
+}
+
+.Nav li {
+  list-style-type: none;
+}
+
+.Nav a {
+  text-decoration: none;
+  color: cornflowerblue;
+}

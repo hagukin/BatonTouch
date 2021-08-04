@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "writer": "",
+    "title": "mysql1",
+    "content": "1",
+    "comment": "",
+    "date": "2021-08-01T11:30:57.618483Z",
+    "upvote": 0,
+    "downvote": 0,
+    "position": 0,
+    "end_story": false
+  },
+  {
+    "id": 2,
+    "writer": "",
+    "title": "mysql2",
+    "content": "2",
+    "comment": "",
+    "date": "2021-08-01T11:30:57.618483Z",
+    "upvote": 0,
+    "downvote": 0,
+    "position": 0,
+    "end_story": false
+  },
+  {
+    "id": 3,
+    "writer": "",
+    "title": "ssssss",
+    "content": "ssss",
+    "comment": "",
+    "date": "2021-08-01T11:30:57.618483Z",
+    "upvote": 0,
+    "downvote": 0,
+    "position": 0,
+    "end_story": false
+  }
+]

@@ -1,40 +1,39 @@
 App
-  Header
-    Nav
-      
-  MainSection 
-    Novel 
-    # state: {fixedNovelData, subNovelData}  
-    # handler: handleAddSub, handleAddRecommend
-    
+Header
+Nav
+
+MainSection: didmount, didupdate: 데이터 로드
+Novel # state: {fixedNovelData, subNovelData}  
+ # handler: handleAddSub, handleAddRecommend
+
       ReadSentenceArea
       # state: none
       # received_props: data={fixedNovelData}
         Sentence:list
 
       @if
-      InputSentenceBox 
-      # state: text 
+      InputSentenceBox
+      # state: text
       # received_props: onAddSub={handleAddSub}
       # handler: handleChangeSentence, handleOnClickButton
 
-        InputSentence 
+        InputSentence
         # received_props: text={text} onChange={handleChangeSentence}
         # handler: handleOnChange
         # event: onChange => handleOnChange(){onChange호출}
 
-        InputTool 
-        # received_props: onClickButton={onAddSub} 
+        InputTool
+        # received_props: onClickButton={onAddSub}
         # handler: handleOnClick
         # event: onClick => handleOnClick(){onAddSub호출}
 
       @if
-      VoteSentenceBox 
+      VoteSentenceBox
       # state: selectedId
       # received_props: onAddRecommend={handleAddRecommend} data={subNovelData}
       # handler: handleVoteSentence, handleSearchSentence
 
-        SelectedSentence 
+        SelectedSentence
         # state: none
         # received_props: text={data[selectedId].text}
         # handler: none
@@ -51,7 +50,7 @@ App
 
           SearchPrevButton
           # state: none
-          # received_props: onSearchPrev={handleOnSearchPrev} 
+          # received_props: onSearchPrev={handleOnSearchPrev}
           # handler: handleOnClick
 
           SearchNextButton
@@ -59,4 +58,4 @@ App
           # received_props: onSearchNext={handleOnSearchNext} direction={'next'}
           # handler: handleOnClick
 
-  Footer
+Footer

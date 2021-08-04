@@ -1,20 +1,28 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-class Nav extends Component{
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return(
-            <div>
-                <ul>
-                    <li><Link to='/'>메인</Link></li>
-                    <li><Link to='/write'>쓰기</Link></li>
-                    <li><Link to='/vote'>투표</Link></li>
-                </ul>
-            </div>
-        );
-    }
+import "./Nav.css";
+
+class Nav extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <nav className="Nav">
+        <ul>
+          <li>
+            <Link to="/main">메인</Link>
+          </li>
+          <li>
+            <Link to="/read">읽기</Link>
+          </li>
+          <li>
+            <Link to="/contribute">참여</Link>
+          </li>
+        </ul>
+      </nav>
+    );
+  }
 }
 
 export default Nav;

@@ -1,6 +1,7 @@
 import React from "react";
 import SelectedSentence from "./SelectedSentence";
 import VoteTool from "./VoteTool";
+import "./VoteSentenceBox.css";
 class VoteSentenceBox extends React.Component {
   constructor(props) {
     super(props);
@@ -9,12 +10,18 @@ class VoteSentenceBox extends React.Component {
     };
   }
   render() {
-    const selectedData = this.props.data.find((elem) => elem.id === this.state.selectedId);
+    // const selectedData = this.props.data.find((elem) => elem.id === this.state.selectedId);
 
+    // return (
+    //   <div className="VoteSentenceBox">
+    //     <SelectedSentence text={selectedData.text} />
+    //     <VoteTool recommend={selectedData.recommend} onVoteSentence={this.handleVoteSentence} onSearchSentence={this.handleSearchSentence} />
+    //   </div>
+    // );
     return (
-      <div>
-        <SelectedSentence data={selectedData} />
-        <VoteTool onVoteSentence={this.handleVoteSentence} onSearchSentence={this.handleSearchSentence} />
+      <div className="VoteSentenceBox">
+        <SelectedSentence text={this.props.selectedData.content} />
+        <VoteTool recommend={this.props.selectedData.upvote} onVoteSentence={this.handleVoteSentence} onSearchSentence={this.handleSearchSentence} />
       </div>
     );
   }
@@ -27,7 +34,7 @@ class VoteSentenceBox extends React.Component {
         }));
       }
     } else if (direction === "prev") {
-      if (this.state.selectedId.slice(4) !== '0') {
+      if (this.state.selectedId.slice(4) !== "0") {
         this.setState((prevState) => ({
           selectedId: "sub_" + (parseInt(prevState.selectedId.slice(4)) - 1),
         }));
