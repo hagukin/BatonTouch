@@ -5,7 +5,11 @@ class RecommendButton extends React.Component {
   }
 
   render() {
-    return <button onClick={this.handleOnClick}>👍{this.props.recommend}</button>;
+    if (this.props.upVote) {
+      return <button onClick={this.handleOnClick}>👍{this.props.recommend}</button>;
+    } else if (this.props.downVote) {
+      return <button onClick={this.handleOnClick}>👎{this.props.recommend}</button>;
+    }
   }
 
   handleOnClick = () => {

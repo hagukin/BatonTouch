@@ -6,9 +6,12 @@ class VoteSentenceBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedId: "sub_0",
+      // selectedId: "sub_0",
     };
   }
+
+  // TODO: 추천변화 서버 PATCH후 FORCEUPDATE
+
   render() {
     // const selectedData = this.props.data.find((elem) => elem.id === this.state.selectedId);
 
@@ -43,7 +46,19 @@ class VoteSentenceBox extends React.Component {
   };
 
   handleVoteSentence = () => {
+    // if (cookie){
+    //   alert
+    // } else{
+    //   onAddVote
+    //   setcookie
+    // }
     this.props.onAddRecommend(this.state.selectedId);
   };
+
+  setCookie(name, value, exp) {
+    var date = new Date();
+    date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
+    document.cookie = name + "=" + value + ";expires=" + date.toUTCString() + ";path=/";
+  }
 }
 export default VoteSentenceBox;

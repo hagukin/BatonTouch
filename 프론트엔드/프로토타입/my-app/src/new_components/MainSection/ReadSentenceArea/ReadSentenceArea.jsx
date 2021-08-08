@@ -3,7 +3,21 @@ import Sentence from "./Sentence";
 import "./ReadSentenceArea.css";
 
 class ReadSentenceArea extends React.Component {
+  // GET 등록된 문장 데이터
+  // async componentDidMount() {
+  //   try {
+  //     const res = await fetch("http://127.0.0.1:8000/api/");
+  //     const posts = await res.json();
+  //     this.setState({
+  //       posts,
+  //     });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
+
   render() {
+    console.log("redas");
     if (!this.props.show) {
       return (
         <div className="ReadSentenceArea">
@@ -27,7 +41,7 @@ class ReadSentenceArea extends React.Component {
           <Sentence text={"."} />
           <Sentence text={"."} />
           <Sentence text={"."} />
-          {this.props.data.slice(this.props.data.length - this.props.show).map((obj) => (
+          {this.props.data.slice(this.props.data.length < this.props.show ? 0 : this.props.data.length - this.props.show).map((obj) => (
             <Sentence key={obj.id} text={obj.content} />
           ))}
           {/* {sentenceList} */}

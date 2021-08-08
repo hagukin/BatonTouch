@@ -28,10 +28,23 @@ class Novel extends React.Component {
     };
   }
 
+  // GET compoenntdIdmount
+  // async componentDidMount() {
+  //   try {
+  //     const res = await fetch("http://127.0.0.1:8000/api/");
+  //     const posts = await res.json();
+  //     this.setState({
+  //       posts,
+  //     });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
+
   render() {
     return (
       <div className="Novel">
-        <Route path="/main">
+        <Route exact path="/">
           <ReadSentenceArea data={this.state.fixedNovelData} />
         </Route>
         <Route path="/read">
@@ -41,7 +54,7 @@ class Novel extends React.Component {
           <ReadSentenceArea show={5} data={this.state.fixedNovelData} />
           <InputSentenceBox onAddSub={this.handleAddSub} />
           {/* <VoteSentenceBox onAddRecommend={this.handleAddRecommend} data={this.state.subNovelData} /> */}
-          <VoteSentenceArea data={this.state.subNovelData} />
+          <VoteSentenceArea onAddRecommend={this.handleAddRecommend} data={this.state.subNovelData} />
         </Route>
       </div>
     );
