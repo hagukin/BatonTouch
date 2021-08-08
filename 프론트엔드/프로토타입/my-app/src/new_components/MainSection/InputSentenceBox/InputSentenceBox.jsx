@@ -31,13 +31,12 @@ class InputSentenceBox extends React.Component {
           const date = new Date();
           date.setMinutes(date.getMinutes() + 1);
           document.cookie = "isupload=true; path=/; expires=" + date.toUTCString() + ";";
+          // // 백엔드 서버로 데이터 전송
+          // this.postNewSentence();
           this.props.onAddSub(this.state.text); // 상위 컴포넌트로 text전달
           this.setState({ text: "" });
         }
       }
-
-      // // 백엔드 서버로 데이터 전송
-      // this.postNewSentence();
     }
   };
 
@@ -48,12 +47,12 @@ class InputSentenceBox extends React.Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        id: 2, // TODO
+        id: 2, // TODO: id처리는 백엔드에서?
         writer: "",
         title: "mysql2",
-        content: "2",
+        content: this.state.text,
         comment: "",
-        date: "2021-08-01T11:30:57.618483Z", // TODO
+        date: new Date().toISOString(), // TODO
         upvote: 0,
         downvote: 0,
         position: 0,

@@ -10,8 +10,8 @@ class VoteTool extends React.Component {
   render() {
     return (
       <div className="VoteTool">
-        <RecommendButton upVote recommend={this.props.recommend} onRecommend={this.handleOnRecommend} />
-        <RecommendButton downVote recommend={this.props.recommend} onRecommend={this.handleOnRecommend} />
+        <RecommendButton upVote recommend={this.props.up} onRecommend={this.handleOnRecommend} />
+        <RecommendButton downVote recommend={this.props.down} onRecommend={this.handleOnRecommend} />
         {/* <SearchPrevButton onSearchPrev={this.handleOnSearchPrev} />
         <SearchNextButton onSearchNext={this.handleOnSearchNext} /> */}
       </div>
