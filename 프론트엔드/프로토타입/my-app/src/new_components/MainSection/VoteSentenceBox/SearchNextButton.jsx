@@ -5,7 +5,7 @@ class SearchNextButton extends React.Component {
   }
 
   render() {
-    return <button onClick={this.handleOnClick}>다음</button>;
+    return <button className="nextBtn" onClick={this.handleOnClick}>다음</button>;
   }
   handleOnClick = () => {
     this.props.onSearchNext();

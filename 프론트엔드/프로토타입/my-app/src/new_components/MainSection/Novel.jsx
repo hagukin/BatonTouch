@@ -16,7 +16,7 @@ class Novel extends React.Component {
           id: 1,
           writer: "ㅇㅇ",
           title: "mysql1",
-          content: "1빠",
+          content: "1111111111111111111111111111111111111111111111111111111111111111111111111111",
           comment: "",
           date: "2021-08-01T11:30:57.618483Z",
           upvote: 0,
