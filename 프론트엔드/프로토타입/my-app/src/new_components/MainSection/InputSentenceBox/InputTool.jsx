@@ -6,7 +6,7 @@ class InputTool extends React.Component {
   }
 
   render() {
-    return <button onClick={this.handleOnClick}>등록</button>;
+    return <button className="InputTool" onClick={this.handleOnClick}>등록</button>;
   }
 
   handleOnClick = () => {

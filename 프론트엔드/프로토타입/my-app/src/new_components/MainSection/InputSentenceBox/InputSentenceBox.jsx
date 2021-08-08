@@ -13,9 +13,9 @@ class InputSentenceBox extends React.Component {
   render() {
     return (
       <div className="InputSentenceBox">
-        <span>{this.state.text.length}/130</span>
         <InputSentence text={this.state.text} onChangeSentence={this.handleChangeSentence} />
         <InputTool onClickButton={this.handleOnClickButton} />
+        <span className="wordLimit">{this.state.text.length}/130</span>
       </div>
     );
   }
