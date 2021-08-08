@@ -24,17 +24,24 @@ class InputSentenceBox extends React.Component {
     if (this.state.text.length > 130) {
       alert("130자 초과입니다.");
     } else {
-      if (window.confirm('"' + this.state.text + '"' + "정말로 이 문장을 업로드 하겠습니까?\n한번 올린 문장은 수정 불가능 합니다.")) {
-        document.cookie = "isupload=true";
-        this.props.onAddSub(this.state.text); // 상위 컴포넌트로 text전달
-        this.setState({ text: "" });
+      if (document.cookie.match("(^|;) ?" + "isupload" + "=([^;]*)(;|$)")) {
+        alert("이미 업로드 하셨습니다.");
+      } else {
+        if (window.confirm('"' + this.state.text + '"' + "정말로 이 문장을 업로드 하겠습니까?\n한번 올린 문장은 수정 불가능 합니다.")) {
+          const date = new Date();
+          date.setMinutes(date.getMinutes() + 1);
+          document.cookie = "isupload=true; path=/; expires=" + date.toUTCString() + ";";
+          this.props.onAddSub(this.state.text); // 상위 컴포넌트로 text전달
+          this.setState({ text: "" });
+        }
       }
+
       // // 백엔드 서버로 데이터 전송
-      // this.postSentence();
+      // this.postNewSentence();
     }
   };
 
-  async postSentence() {
+  async postNewSentence() {
     const res = await fetch("api주소", {
       method: "POST",
       headers: {

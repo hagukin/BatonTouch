@@ -14,7 +14,7 @@ class Novel extends React.Component {
       subNovelData: [
         {
           id: 1,
-          writer: "",
+          writer: "ㅇㅇ",
           title: "mysql1",
           content: "1",
           comment: "",
