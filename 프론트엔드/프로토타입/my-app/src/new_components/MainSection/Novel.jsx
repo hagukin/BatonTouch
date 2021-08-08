@@ -64,9 +64,9 @@ class Novel extends React.Component {
     // subNovelData에 _text에 대응하는 객체 추가
     this.setState((prevState) => ({
       subNovelData: prevState.subNovelData.concat({
-        writer: "",
+        writer: "ㅇㅇ",
         title: "mysql1",
-        date: new Date(),
+        date: new Date().toISOString(),
         upvote: 0,
         downvote: 0,
         position: 0,
