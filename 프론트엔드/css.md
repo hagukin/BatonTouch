@@ -17,6 +17,13 @@
 
         InputSentenceBox
             wordLimit
-            InputSentence
+            InputSentence   
             InputTool
+
+        voteWrapper
+            VoteSentenceBox
+                content
+                recommBtn
+                voteDate
+                voteUserName
 하단

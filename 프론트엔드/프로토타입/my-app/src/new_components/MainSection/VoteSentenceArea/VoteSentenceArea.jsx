@@ -1,5 +1,6 @@
 import React from "react";
 import VoteSentenceBox from "../VoteSentenceBox/VoteSentenceBox";
+import "./voteWrapper.css";
 class VoteSentenceArea extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +20,7 @@ class VoteSentenceArea extends React.Component {
 
   render() {
     const VoteSentenceAreaList = this.props.data.map((x) => <VoteSentenceBox key={x.id} selectedData={x} />);
-    return <div>{VoteSentenceAreaList}</div>;
+    return <div className="voteWrapper">{VoteSentenceAreaList}</div>;
   }
 }
 export default VoteSentenceArea;

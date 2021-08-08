@@ -24,6 +24,10 @@
   border-radius: 15px;
 }
 
+.menus:hover {
+  background-color: rgb(139, 212, 243);
+  color: white;
+}
 
 
 .active {
@@ -33,5 +37,9 @@
   color: orange;
   background-color: white;
   border-radius: 15px;
+}
+
+.active:hover{
+  background-color: rgb(240, 199, 122);
 }
 

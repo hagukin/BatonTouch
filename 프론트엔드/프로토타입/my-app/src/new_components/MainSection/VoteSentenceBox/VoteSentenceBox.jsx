@@ -23,8 +23,8 @@ class VoteSentenceBox extends React.Component {
     // );
     return (
       <div className="VoteSentenceBox">
-        <span>{this.props.selectedData.writer}</span>
-        <span>{this.props.selectedData.date.slice(0, 10)}</span>
+        <span className="voteUserName">{this.props.selectedData.writer}</span>
+        <span className="voteDate">{this.props.selectedData.date.slice(0, 10)}</span>
         <SelectedSentence text={this.props.selectedData.content} />
         <VoteTool down={this.props.selectedData.downvote} up={this.props.selectedData.upvote} onVoteSentence={this.handleVoteSentence} onSearchSentence={this.handleSearchSentence} />
       </div>

@@ -2,11 +2,13 @@
     text-align: center;
     width: 40%;
     margin: 30px auto;
+    overflow: visible;
 }
 
 .InputSentence{
     display: block;
     width: 100%;
+    word-wrap: break-word;
     height: 50px;
     background-color: transparent;
     border: solid 2px lightblue;
@@ -24,12 +26,15 @@
 
 .InputTool {
     float: right;
-
-    background-color: transparent;
     border: none;
     border-bottom: 2px solid orange;
+    background-color: transparent;
     margin-top: 2px;
     margin-right: 10px;
+}
+
+.InputTool:hover{
+    border-bottom: 2px solid rgb(24, 109, 161);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
