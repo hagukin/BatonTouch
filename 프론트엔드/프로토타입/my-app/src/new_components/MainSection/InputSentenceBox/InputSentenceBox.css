@@ -1,14 +1,35 @@
 .InputSentenceBox{
     text-align: center;
-    margin-left: 4%;
+    width: 40%;
+    margin: 30px auto;
 }
 
 .InputSentence{
+    display: block;
+    width: 100%;
+    height: 50px;
     background-color: transparent;
+    border: solid 2px lightblue;
+    border-radius: 30px;
     text-align: center;
-    margin-right: 10px;
-    width: 500px;
     font-family: 'Nanum Pen Script', cursive;
+}
+
+.wordLimit {
+    float: right;
+    margin-top: 0.5px;
+    margin-right: 20px;
+    border-bottom: 2px solid orangered;
+}
+
+.InputTool {
+    float: right;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid orange;
+    margin-top: 2px;
+    margin-right: 10px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');

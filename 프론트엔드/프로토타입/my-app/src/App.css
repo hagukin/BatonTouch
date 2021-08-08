@@ -15,10 +15,6 @@ body {
   margin: 0;
 }
 
-button {
-  width: 50px;
-  font-size: 10px;
-  height: 20px;
-  background-color: white;
-  border: solid 2px skyblue;
+input:focus{
+  outline: none;
 }

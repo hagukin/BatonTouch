@@ -1,5 +1,12 @@
 .ReadSentenceArea {
   text-align: center;
+  width: 40%;
+  border: 2px solid gray;
+  margin: 0 auto;
+  border-radius: 30px;
+  height: 300px;
 }
+
+
 
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");

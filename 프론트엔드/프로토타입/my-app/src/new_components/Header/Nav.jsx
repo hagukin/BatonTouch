@@ -8,16 +8,16 @@ class Nav extends Component {
   }
   render() {
     return (
-      <nav className="Nav">
-        <ul>
+      <nav className="navWrapper">
+        <ul className="navigation">
           <li>
-            <Link to="/main">메인</Link>
+            <Link to="/main" className="menus" className="active">메인</Link>
           </li>
           <li>
-            <Link to="/read">읽기</Link>
+            <Link to="/read" className="menus">읽기</Link>
           </li>
           <li>
-            <Link to="/contribute">참여</Link>
+            <Link to="/contribute" className="menus">참여</Link>
           </li>
         </ul>
       </nav>
