@@ -19,6 +19,19 @@ class VoteSentenceArea extends React.Component {
 
   render() {
     const VoteSentenceAreaList = this.props.data.map((x) => <VoteSentenceBox key={x.id} selectedData={x} />);
+    VoteSentenceAreaList.sort(function (a, b) {
+      const aDate = new Date(a.props.selectedData.date);
+      const bDate = new Date(b.props.selectedData.date);
+      if (aDate > bDate) {
+        return -1;
+      }
+      if (aDate === bDate) {
+        return 0;
+      }
+      if (aDate < bDate) {
+        return 1;
+      }
+    });
     return <div>{VoteSentenceAreaList}</div>;
   }
 }

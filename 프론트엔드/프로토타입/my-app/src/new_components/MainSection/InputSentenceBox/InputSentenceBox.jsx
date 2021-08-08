@@ -64,8 +64,6 @@ class InputSentenceBox extends React.Component {
   }
 
   handleChangeSentence = (_text) => {
-    // InputSentence의 onChange가 호출
-    // this.state.text 변경
     this.setState({ text: _text });
   };
 }
