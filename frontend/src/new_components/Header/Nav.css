@@ -1,0 +1,43 @@
+.navWrapper {
+  overflow: auto;
+}
+
+.navigation {
+  /* flex */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  flex-basis: content;
+  padding: 10px 0px;
+}
+
+.navigation li {
+  list-style-type: none;
+}
+
+.menus {
+  text-decoration: none;
+  padding: 9px 30px;
+  border: solid 3px cornflowerblue;
+  color: cornflowerblue;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.menus:hover {
+  background-color: rgb(139, 212, 243);
+  color: white;
+}
+
+.active {
+  text-decoration: none;
+  padding: 9px 30px;
+  border: solid 3px orange;
+  color: orange;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.active:hover {
+  background-color: rgb(240, 199, 122);
+}
