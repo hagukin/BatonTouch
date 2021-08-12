@@ -1,9 +1,0 @@
-[
-    {"id":"admin2", "writeMain":"없다 이 xx놈아", "writeCmt":"이것이 주석이다!", "recomm":10},
-    {"id":"admin3", "writeMain":"본문 예제 3번", "writeCmt":"주석 예제 3번", "recomm":25},
-    {"id":"admin4", "writeMain":"본문 예제 4번", "writeCmt":"주석 예제 4번", "recomm":7},
-    {"id":"admin5", "writeMain":"본문 예제 5번", "writeCmt":"주석 예제 5번", "recomm":99},
-    {"id":"admin6", "writeMain":"본문 예제 6번", "writeCmt":"주석 예제 6번", "recomm":301},
-    {"id":"admin7", "writeMain":"본문 예제 7번", "writeCmt":"주석 예제 7번", "recomm":7},
-    {"id":"admin8", "writeMain":"본문 예제 8번", "writeCmt":"주석 예제 8번", "recomm":0}
-]
