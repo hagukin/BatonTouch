@@ -43,25 +43,29 @@ class InputSentenceBox extends React.Component {
   };
 
   async postNewSentence() {
-    const res = await fetch("http://127.0.0.1:8000/api/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: 2, // TODO: id처리는 백엔드에서?
-        writer: "",
-        title: "mysql2",
-        content: this.state.text,
-        comment: "",
-        date: new Date().toISOString(), // TODO
-        upvote: 0,
-        downvote: 0,
-        position: 0,
-        end_story: false,
-      }),
-    });
-    const data = await res.json();
+    try {
+      const res = await fetch("http://127.0.0.1:8000/api/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // id: 2, // TODO: id처리는 백엔드에서?
+          writer: "",
+          title: "mysql2",
+          content: this.state.text,
+          comment: "",
+          date: new Date().toISOString(), // TODO
+          upvote: 0,
+          downvote: 0,
+          position: 0,
+          end_story: false,
+        }),
+      });
+      const data = await res.json();
+    } catch (e) {
+      console.log(e);
+    }
     return data;
   }
 
