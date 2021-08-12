@@ -9,18 +9,18 @@ class ReadSentenceArea extends React.Component {
   //   };
   // }
   // GET 등록된 문장 데이터
-  // async componentDidMount() {
-  //   try {
-  //     const res = await fetch("http://127.0.0.1:8000/api/");
-  //     const posts = await res.json();
-  //     this.setState({
-  //       posts,
-  //     });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  //   console.log(this.state.posts);
-  // }
+  async componentDidMount() {
+    try {
+      const res = await fetch("http://127.0.0.1:8000/api/");
+      const posts = await res.json();
+      this.setState({
+        posts,
+      });
+    } catch (e) {
+      console.log(e);
+    }
+    console.log(this.state.posts);
+  }
 
   render() {
     console.log("redas");
