@@ -22,7 +22,10 @@ class VoteSentenceArea extends React.Component {
   // }
 
   render() {
-    const VoteSentenceAreaList = this.props.data.map((x) => <VoteSentenceBox key={x.id} selectedData={x} />);
+    // 투표중인 데이터 GET fetch
+    data = this.getSentence();
+
+    const VoteSentenceAreaList = data.map((x) => <VoteSentenceBox key={x.id} selectedData={x} />);
     this.orderBy(VoteSentenceAreaList, this.state.order); // 정렬
 
     return (
@@ -37,6 +40,19 @@ class VoteSentenceArea extends React.Component {
         {VoteSentenceAreaList}
       </div>
     );
+  }
+
+  async getSentence() {
+    let res;
+    let posts;
+    try {
+      res = await fetch("http://127.0.0.1:8000/api/novels");
+      posts = await res.json();
+    } catch (e) {
+      console.log(e);
+    }
+
+    return posts;
   }
 
   handleOnChangeSelect = (e) => {

@@ -21,8 +21,6 @@ class InputSentenceBox extends React.Component {
   }
 
   handleOnClickButton = () => {
-    console.log(this.postNewSentence());
-
     if (this.state.text.length > 130) {
       alert("130자 초과입니다.");
     } else {
