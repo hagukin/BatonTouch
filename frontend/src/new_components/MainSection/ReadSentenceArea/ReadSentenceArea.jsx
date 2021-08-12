@@ -9,25 +9,36 @@ class ReadSentenceArea extends React.Component {
   //   };
   // }
   // GET 등록된 문장 데이터
-  async componentDidMount() {
+  // async componentDidMount() {
+  //   try {
+  //     const res = await fetch("http://127.0.0.1:8000/api/");
+  //     const posts = await res.json();
+  //     this.setState({
+  //       posts,
+  //     });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  //   console.log(this.state.posts);
+  // }
+
+  render() {
+    // GET fetch
+    const res;
+    const posts;
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/");
-      const posts = await res.json();
-      this.setState({
-        posts,
-      });
+      res = await fetch("http://127.0.0.1:8000/api/");
+      posts = await res.json();
     } catch (e) {
       console.log(e);
     }
-    console.log(this.state.posts);
-  }
 
-  render() {
+
     console.log("redas");
     if (!this.props.show) {
       return (
         <div className="ReadSentenceArea">
-          {this.props.data.map((obj) => (
+          {posts.map((obj) => (
             <Sentence key={obj.id} text={obj.content} />
           ))}
         </div>
@@ -47,7 +58,7 @@ class ReadSentenceArea extends React.Component {
           <Sentence text={"."} />
           <Sentence text={"."} />
           <Sentence text={"."} />
-          {this.props.data.slice(this.props.data.length < this.props.show ? 0 : this.props.data.length - this.props.show).map((obj) => (
+          {posts.slice(posts.length < this.props.show ? 0 : posts.length - this.props.show).map((obj) => (
             <Sentence key={obj.id} text={obj.content} />
           ))}
           {/* {sentenceList} */}
