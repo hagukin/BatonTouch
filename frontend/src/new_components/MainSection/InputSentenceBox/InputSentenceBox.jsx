@@ -50,11 +50,11 @@ class InputSentenceBox extends React.Component {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          // id: 2, // TODO: id처리는 백엔드에서?
-          writer: "",
+          id: 2, // TODO: id처리는 백엔드에서?
+          writer: "anony",
           title: "mysql2",
           content: this.state.text,
-          comment: "",
+          comment: "helloworld",
           date: new Date().toISOString(), // TODO
           upvote: 0,
           downvote: 0,
@@ -63,11 +63,12 @@ class InputSentenceBox extends React.Component {
         }),
       });
       const data = await res.json();
-      return data;
+      console.log("리스폰스");
+      console.log(data);
     } catch (e) {
+      console.log("에러남");
       console.log(e);
     }
-
   }
 
   handleChangeSentence = (_text) => {
