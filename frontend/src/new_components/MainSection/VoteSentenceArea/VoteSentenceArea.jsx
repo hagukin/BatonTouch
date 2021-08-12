@@ -1,10 +1,12 @@
 import React from "react";
 import VoteSentenceBox from "../VoteSentenceBox/VoteSentenceBox";
+import SearchButton from "../VoteSentenceBox/SearchNextButton";
 import "./voteWrapper.css";
 class VoteSentenceArea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      page: 0,
       order: "upvote", // register: 등록순 , date: 날짜순, upvote: 따봉순
     };
   }
@@ -23,9 +25,147 @@ class VoteSentenceArea extends React.Component {
 
   render() {
     // 투표중인 데이터 GET fetch
-    data = this.getSentence();
+    // const data = this.getSentence();
+    const data = [
+      {
+        id: 3,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "2020년",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 10,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+      {
+        id: 4,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "2020년",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 10,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+      {
+        id: 5,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "2020년",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 10,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+      {
+        id: 6,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "2020년",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 10,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+      {
+        id: 7,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "2020년",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 109999,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+      {
+        id: 8,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "2020년",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 10,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+      {
+        id: 9,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "2020년",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 10,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+      {
+        id: 10,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "10번째",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 10,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+      {
+        id: 11,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "2020년",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 10,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+      {
+        id: 12,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "12번째",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 10,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+      {
+        id: 13,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "13번째",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 1100,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+    ];
 
-    const VoteSentenceAreaList = data.map((x) => <VoteSentenceBox key={x.id} selectedData={x} />);
+    if (!data.length) {
+      return <p>등록된 문장이 없당</p>;
+    }
+
+    const VoteSentenceAreaList = data.map((x) => <VoteSentenceBox key={x.id} selectedData={x} onVote={this.onVote} />);
     this.orderBy(VoteSentenceAreaList, this.state.order); // 정렬
 
     return (
@@ -37,22 +177,38 @@ class VoteSentenceArea extends React.Component {
           <option value="date">날짜순</option>
           <option value="upvote">추천순</option>
         </select>
-        {VoteSentenceAreaList}
+        <SearchButton prev page={this.state.page} length={data.length} onClick={this.handleOnClick} />
+        {VoteSentenceAreaList.slice(this.state.page * 5, (this.state.page + 1) * 5)}
+        <SearchButton next page={this.state.page} length={data.length} onClick={this.handleOnClick} />
       </div>
     );
   }
 
+  handleOnClick = (mode) => {
+    if (mode === "prev") {
+      this.setState((prev) => ({
+        page: prev.page - 1,
+      }));
+    } else if (mode === "next") {
+      this.setState((prev) => ({
+        page: prev.page + 1,
+      }));
+    }
+  };
+
+  onVote = () => {
+    this.props.onVote();
+  };
+
   async getSentence() {
-    let res;
-    let posts;
     try {
-      res = await fetch("http://127.0.0.1:8000/api/novels");
-      posts = await res.json();
+      const res = await fetch("http://127.0.0.1:8000/api/");
+      const posts = await res.json();
+      return posts;
     } catch (e) {
       console.log(e);
+      return undefined;
     }
-
-    return posts;
   }
 
   handleOnChangeSelect = (e) => {

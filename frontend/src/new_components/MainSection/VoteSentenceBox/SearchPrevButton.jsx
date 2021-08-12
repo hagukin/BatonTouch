@@ -1,11 +1,12 @@
 import React from "react";
-class SearchPrevButton extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
+class SearchPrevButton extends React.Component {
   render() {
-    return <button className="prevBtn" onClick={this.handleOnClick}>이전</button>;
+    return (
+      <button className="prevBtn" onClick={this.handleOnClick}>
+        이전
+      </button>
+    );
   }
 
   handleOnClick = () => {

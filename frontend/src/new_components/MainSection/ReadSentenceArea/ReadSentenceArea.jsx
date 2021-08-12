@@ -24,7 +24,21 @@ class ReadSentenceArea extends React.Component {
 
   render() {
     // GET fetch
-    const data = this.getSentence();
+    // const data = this.getSentence();
+    const data = [
+      {
+        id: 2,
+        writer: "ㅇㅇ",
+        title: "mysql1",
+        content: "2020년sssss",
+        comment: "",
+        date: "2020-08-01T11:30:57.618483Z",
+        upvote: 10,
+        downvote: 0,
+        position: 0,
+        end_story: false,
+      },
+    ];
 
     console.log("redas");
     if (!this.props.show) {
@@ -63,7 +77,7 @@ class ReadSentenceArea extends React.Component {
     let res;
     let posts;
     try {
-      res = await fetch("http://127.0.0.1:8000/api/");
+      res = await fetch("http://127.0.0.1:8000/api/novel");
       posts = await res.json();
     } catch (e) {
       console.log(e);
