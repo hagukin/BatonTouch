@@ -1,0 +1,24 @@
+html {
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+
+body {
+  background-color: RGB(250, 251, 253);
+  height: 100%;
+  /* border: solid 3px brown; */
+  margin: 0;
+}
+
+input:focus{
+  outline: none;
+}
+
+textarea:focus{
+  outline: none;
+}

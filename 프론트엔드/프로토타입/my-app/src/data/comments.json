@@ -1,0 +1,26 @@
+[
+  {
+    "contents": "왜 홍시맛이 난다 하였느냐.",
+    "recommend": 40,
+    "date": "2021-09-09",
+    "id": "admin1"
+  },
+  {
+    "contents": "홍시맛이 나서 홍시맛이 난다 하였거늘, 어찌 하여 그리 여쭙는게냐",
+    "recommend": 12,
+    "date": "2021-09-10",
+    "id": "admin2"
+  },
+  {
+    "contents": "송구하옵니다 장금마마",
+    "recommend": 40,
+    "date": "2021-10-09",
+    "id": "admin3"
+  },
+  {
+    "contents": "여봐라 게 아무도 없느냐",
+    "recommend": 410,
+    "date": "2021-12-29",
+    "id": "admin4"
+  }
+]
