@@ -21,27 +21,29 @@ class InputSentenceBox extends React.Component {
   }
 
   handleOnClickButton = () => {
-    if (this.state.text.length > 130) {
-      alert("130자 초과입니다.");
-    } else {
-      if (document.cookie.match("(^|;) ?" + "isupload" + "=([^;]*)(;|$)")) {
-        alert("이미 업로드 하셨습니다.");
-      } else {
-        if (window.confirm('"' + this.state.text + '"' + "정말로 이 문장을 업로드 하겠습니까?\n한번 올린 문장은 수정 불가능 합니다.")) {
-          const date = new Date();
-          date.setMinutes(date.getMinutes() + 1);
-          document.cookie = "isupload=true; path=/; expires=" + date.toUTCString() + ";";
-          // // 백엔드 서버로 데이터 전송
-          // this.postNewSentence();
-          this.props.onAddSub(this.state.text); // 상위 컴포넌트로 text전달
-          this.setState({ text: "" });
-        }
-      }
-    }
+    console.log(this.postNewSentence());
+
+    // if (this.state.text.length > 130) {
+    //   alert("130자 초과입니다.");
+    // } else {
+    //   if (document.cookie.match("(^|;) ?" + "isupload" + "=([^;]*)(;|$)")) {
+    //     alert("이미 업로드 하셨습니다.");
+    //   } else {
+    //     if (window.confirm('"' + this.state.text + '"' + "정말로 이 문장을 업로드 하겠습니까?\n한번 올린 문장은 수정 불가능 합니다.")) {
+    //       const date = new Date();
+    //       date.setMinutes(date.getMinutes() + 1);
+    //       document.cookie = "isupload=true; path=/; expires=" + date.toUTCString() + ";";
+    //       // // 백엔드 서버로 데이터 전송
+    //       this.postNewSentence();
+    //       this.props.onAddSub(this.state.text); // 상위 컴포넌트로 text전달
+    //       this.setState({ text: "" });
+    //     }
+    //   }
+    // }
   };
 
   async postNewSentence() {
-    const res = await fetch("api주소", {
+    const res = await fetch("http://127.0.0.1:8000/api/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
