@@ -50,7 +50,7 @@ class InputSentenceBox extends React.Component {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          writer: "ㅇㅇ",
+          writer: "anony",
           title: "mysql2",
           content: this.state.text,
           comment: "helloworld",
