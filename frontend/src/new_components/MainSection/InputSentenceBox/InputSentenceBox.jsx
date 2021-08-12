@@ -63,6 +63,7 @@ class InputSentenceBox extends React.Component {
         }),
       });
       const data = await res.json();
+      console.log("리스폰스");
       console.log(data);
     } catch (e) {
       console.log("에러남");
