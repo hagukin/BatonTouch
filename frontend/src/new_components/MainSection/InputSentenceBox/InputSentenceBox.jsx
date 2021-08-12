@@ -63,10 +63,11 @@ class InputSentenceBox extends React.Component {
         }),
       });
       const data = await res.json();
+      return data;
     } catch (e) {
       console.log(e);
     }
-    return data;
+
   }
 
   handleChangeSentence = (_text) => {
