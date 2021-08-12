@@ -50,7 +50,6 @@ class InputSentenceBox extends React.Component {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id: 2, // TODO: id처리는 백엔드에서?
           writer: "anony",
           title: "mysql2",
           content: this.state.text,
