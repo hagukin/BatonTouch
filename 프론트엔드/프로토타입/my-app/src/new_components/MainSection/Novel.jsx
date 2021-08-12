@@ -43,7 +43,7 @@ class Novel extends React.Component {
           content: "2020년",
           comment: "",
           date: "2020-08-01T11:30:57.618483Z",
-          upvote: 0,
+          upvote: 10,
           downvote: 0,
           position: 0,
           end_story: false,

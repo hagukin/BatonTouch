@@ -4,6 +4,9 @@ import "./voteWrapper.css";
 class VoteSentenceArea extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      order: "upvote", // register: 등록순 , date: 날짜순, upvote: 따봉순
+    };
   }
 
   // async componentDidMount() {
@@ -20,24 +23,61 @@ class VoteSentenceArea extends React.Component {
 
   render() {
     const VoteSentenceAreaList = this.props.data.map((x) => <VoteSentenceBox key={x.id} selectedData={x} />);
-<<<<<<< HEAD
-    VoteSentenceAreaList.sort(function (a, b) {
-      const aDate = new Date(a.props.selectedData.date);
-      const bDate = new Date(b.props.selectedData.date);
-      if (aDate > bDate) {
-        return -1;
-      }
-      if (aDate === bDate) {
-        return 0;
-      }
-      if (aDate < bDate) {
-        return 1;
-      }
+    this.orderBy(VoteSentenceAreaList, this.state.order); // 정렬
+
+    return (
+      <div>
+        <select name="select_order" onChange={this.handleOnChangeSelect}>
+          <option value="register" selected>
+            등록순
+          </option>
+          <option value="date">날짜순</option>
+          <option value="upvote">추천순</option>
+        </select>
+        {VoteSentenceAreaList}
+      </div>
+    );
+  }
+
+  handleOnChangeSelect = (e) => {
+    this.setState({
+      order: e.target.options[e.target.selectedIndex].value,
     });
-    return <div>{VoteSentenceAreaList}</div>;
-=======
-    return <div className="voteWrapper">{VoteSentenceAreaList}</div>;
->>>>>>> 9c42d6ecf20542a18b1397a4a2d5ef0a30848448
+  };
+
+  orderBy(list, method) {
+    if (method === "register") {
+      return;
+    } else if (method === "date") {
+      list.sort(function (a, b) {
+        const aDate = new Date(a.props.selectedData.date);
+        const bDate = new Date(b.props.selectedData.date);
+        if (aDate > bDate) {
+          return -1;
+        }
+        if (aDate === bDate) {
+          return 0;
+        }
+        if (aDate < bDate) {
+          return 1;
+        }
+      });
+    } else if (method === "upvote") {
+      // upvote순 정렬
+      list.sort(function (a, b) {
+        const aVote = a.props.selectedData.upvote;
+        const bVote = b.props.selectedData.upvote;
+        if (aVote > bVote) {
+          return -1;
+        }
+        if (aVote === bVote) {
+          return 0;
+        }
+        if (aVote < bVote) {
+          return 1;
+        }
+      });
+    }
   }
 }
 export default VoteSentenceArea;
