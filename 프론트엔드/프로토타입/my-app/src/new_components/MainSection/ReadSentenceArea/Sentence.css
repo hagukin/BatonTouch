@@ -2,4 +2,5 @@
   width: 80%;
   margin: 2.5px auto;
   font-family: "Nanum Pen Script", cursive;
+  word-wrap: break-word;
 }
