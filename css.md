@@ -22,13 +22,13 @@
     voteWrapper
         voteOrder
 
-        votePageNext
-        votePagePrev
-
         VoteSentenceBox
             content
             recommBtn
             voteDate
             voteUserName
+            voteContainer
+                prevBtn - prevArrow
+                nextBtn - nextArrow
 
 하단

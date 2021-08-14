@@ -178,8 +178,12 @@ class VoteSentenceArea extends React.Component {
           <option value="upvote">추천순</option>
         </select>
         {VoteSentenceAreaList.slice(this.state.page * 5, (this.state.page + 1) * 5)}
-        <SearchButton className="votePagePrev" prev page={this.state.page} length={data.length} onClick={this.handleOnClick} />
-        <SearchButton className="votePageNext" next page={this.state.page} length={data.length} onClick={this.handleOnClick} />
+        <div className="voteContainer">
+          <SearchButton prev page={this.state.page} length={data.length} onClick={this.handleOnClick} />
+          <SearchButton next page={this.state.page} length={data.length} onClick={this.handleOnClick} />
+          <span className="prevArrow">{"<"}</span>
+          <span className="nextArrow">{">"}</span>
+        </div>  
       </div>
     );
   }

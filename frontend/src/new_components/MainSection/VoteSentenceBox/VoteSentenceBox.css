@@ -1,8 +1,3 @@
-.voteOrder{
-  float: right;
-  margin-right: 2px;
-}
-
 .VoteSentenceBox {
   width: 100%;
   margin: 10px auto;
@@ -26,6 +21,9 @@
 .voteUserName {
 
 }
+
+
+
 
 .voteContent{
   flex-basis: 100%;

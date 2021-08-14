@@ -3,3 +3,64 @@
     margin: 0 auto;
     margin-top: 70px;
 }
+
+.voteOrder{
+    float: right;
+    margin-right: 2px;
+}
+
+.voteContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prevBtn{
+    border: none;
+    background-color: transparent;
+}
+
+.prevArrow{
+    display: inline-block;
+    color: black;
+    margin-bottom: 3px;
+    order: -1;  
+}
+
+.prevBtn:hover ~ .prevArrow{
+    color: blue;
+    animation-name: prevArrowSlidein;
+    animation-duration: .9s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}
+
+.nextBtn{
+    border: none;
+    background-color: transparent;
+}
+
+.nextArrow{
+    display: inline-block;
+    color: black;
+    margin-bottom: 3px;
+}
+
+.nextBtn:hover ~ .nextArrow{
+    color: red;
+    animation-name: nextArrowSlidein;
+    animation-duration: .9s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes nextArrowSlidein {
+    from{ transform: translate(0);}
+    to {transform: translate(10px);}
+}
+
+@keyframes prevArrowSlidein {
+    from{ transform: translate(-10px);}
+    to {transform: translate(0);}
+}
+

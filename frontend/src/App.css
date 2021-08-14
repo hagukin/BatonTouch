@@ -10,7 +10,7 @@ html {
 
 body {
   background-color: RGB(250, 251, 253);
-  height: 100%;
+  overflow: auto;
   /* border: solid 3px brown; */
   margin: 0;
 }
