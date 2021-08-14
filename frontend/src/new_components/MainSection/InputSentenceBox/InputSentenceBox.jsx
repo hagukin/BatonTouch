@@ -16,11 +16,11 @@ class InputSentenceBox extends React.Component {
     return (
       <div className="InputSentenceBox">
         <InputSentence text={this.state.mode === "text" ? this.state.text : this.state.comment} onChangeSentence={this.handleChangeSentence} />
-        <button onClick={this.handleOnClickModeButton}>{this.state.mode === "text" ? "문장" : "주석"}</button>
+        <button className="toggleCmt" onClick={this.handleOnClickModeButton}>{this.state.mode === "text" ? "문장" : "주석"}</button>
+        <InputTool onClickButton={this.handleOnClickButton} />
         <span className="wordLimit">
           {this.state.text.length}/{this.state.mode === "text" ? 130 : 50}
         </span>
-        <InputTool onClickButton={this.handleOnClickButton} />
       </div>
     );
   }

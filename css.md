@@ -1,19 +1,30 @@
-상단 logo titleName
+상단 
+    logo 
+        titleName
 
-accountInfo
-login
+    ccountInfo
+        login
 
-navwrapper - 배경색
-navigation - flex
-menus + active
-중단 Novel ReadSentenceArea sentence
+    navwrapper - 배경색
+        navigation
+        menus + active
+
+중단 
+    Novel ReadSentenceArea 
+        sentence
 
     InputSentenceBox
-        wordLimit
         InputSentence
+        wordLimit
         InputTool
+        toggleCmt
 
     voteWrapper
+        voteOrder
+
+        votePageNext
+        votePagePrev
+
         VoteSentenceBox
             content
             recommBtn

@@ -169,17 +169,17 @@ class VoteSentenceArea extends React.Component {
     this.orderBy(VoteSentenceAreaList, this.state.order); // 정렬
 
     return (
-      <div>
-        <select name="select_order" onChange={this.handleOnChangeSelect}>
+      <div className="voteWrapper">
+        <select className="voteOrder" name="select_order" onChange={this.handleOnChangeSelect}>
           <option value="register" selected>
             등록순
           </option>
           <option value="date">날짜순</option>
           <option value="upvote">추천순</option>
         </select>
-        <SearchButton prev page={this.state.page} length={data.length} onClick={this.handleOnClick} />
         {VoteSentenceAreaList.slice(this.state.page * 5, (this.state.page + 1) * 5)}
-        <SearchButton next page={this.state.page} length={data.length} onClick={this.handleOnClick} />
+        <SearchButton className="votePagePrev" prev page={this.state.page} length={data.length} onClick={this.handleOnClick} />
+        <SearchButton className="votePageNext" next page={this.state.page} length={data.length} onClick={this.handleOnClick} />
       </div>
     );
   }
