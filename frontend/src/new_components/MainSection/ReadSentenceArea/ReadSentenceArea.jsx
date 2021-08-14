@@ -61,9 +61,9 @@ class ReadSentenceArea extends React.Component {
       // }
       return (
         <div className="ReadSentenceArea">
-          <Sentence text={"."} />
-          <Sentence text={"."} />
-          <Sentence text={"."} />
+          <Sentence text={"aaaaaaaaaaaaaaaaa"} />
+          <Sentence text={"bbbbbbbbbbbbbbbbb"} />
+          <Sentence text={"ccccccccccccccccc"} />
           {data.slice(data.length < this.props.show ? 0 : data.length - this.props.show).map((obj) => (
             <Sentence key={obj.id} text={obj.content} />
           ))}
