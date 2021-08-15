@@ -3,13 +3,13 @@ class RecommendButton extends React.Component {
   render() {
     if (this.props.upVote) {
       return (
-        <button className="voteUp" onClick={this.handleOnClick}>
+        <button className="recommBtn" onClick={this.handleOnClick}>
           👍{this.props.recommend}
         </button>
       );
     } else if (this.props.downVote) {
       return (
-        <button className="voteDown" onClick={this.handleOnClick}>
+        <button className="recommBtn" onClick={this.handleOnClick}>
           👎{this.props.recommend}
         </button>
       );
