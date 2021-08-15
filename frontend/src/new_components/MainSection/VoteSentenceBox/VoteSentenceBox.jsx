@@ -27,12 +27,12 @@ class VoteSentenceBox extends React.Component {
       this.setState({
         comment: false,
       });
-      e.target.previousSibling.className = "voteContentCmt";
+      e.target.previousSibling.className = "voteContent";
     } else if (this.state.comment === false) {
       this.setState({
         comment: true,
       });
-      e.target.previousSibling.className = "voteContent";
+      e.target.previousSibling.className = "voteContentCmt";
     }
   };
 
