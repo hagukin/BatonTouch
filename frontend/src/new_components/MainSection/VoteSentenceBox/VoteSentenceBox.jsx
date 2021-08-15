@@ -22,10 +22,18 @@ class VoteSentenceBox extends React.Component {
     );
   }
 
-  onMouseClick = () => {
-    this.setState((prev) => ({
-      comment: !prev.comment,
-    }));
+  onMouseClick = (e) => {
+    if (this.state.comment === true) {
+      this.setState({
+        comment: false,
+      });
+      e.target.previousSibling.className = "voteContentCmt";
+    } else if (this.state.comment === false) {
+      this.setState({
+        comment: true,
+      });
+      e.target.previousSibling.className = "voteContent";
+    }
   };
 
   onMouseOut = () => {
