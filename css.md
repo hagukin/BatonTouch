@@ -23,8 +23,10 @@
         voteOrder
 
         VoteSentenceBox
-            content
+            voteContent - voteContentCmt
+            votePage
             recommBtn
+            voteToggleCmt
             voteDate
             voteUserName
             voteContainer

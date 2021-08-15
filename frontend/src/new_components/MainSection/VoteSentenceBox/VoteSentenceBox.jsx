@@ -16,7 +16,7 @@ class VoteSentenceBox extends React.Component {
         <span className="voteUserName">{this.props.selectedData.writer}</span>
         <span className="voteDate">{this.props.selectedData.date.slice(0, 10)}</span>
         <SelectedSentence text={this.state.comment ? this.props.selectedData.comment : this.props.selectedData.content} />
-        <button onClick={this.onMouseClick}>{this.state.comment ? "주석" : "문장"}</button>
+        <button className="voteToggleCmt" onClick={this.onMouseClick}>{this.state.comment ? "주석" : "문장"}</button>
         <VoteTool down={this.props.selectedData.downvote} up={this.props.selectedData.upvote} onVote={this.onVote} />
       </div>
     );

@@ -182,7 +182,7 @@ class VoteSentenceArea extends React.Component {
           <SearchButton prev page={this.state.page} length={data.length} onClick={this.handleOnClick} />
           <SearchButton next page={this.state.page} length={data.length} onClick={this.handleOnClick} />
           <span className="prevArrow">{"<"}</span>
-          <span>{this.state.page + 1}</span>
+          <span className="votePage">{this.state.page + 1 + " Page"}</span>
           <span className="nextArrow">{">"}</span>
         </div>
       </div>

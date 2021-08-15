@@ -9,10 +9,6 @@
   align-items: center;
 }
 
-.VoteSentenceBox p {
-  margin: 0;
-}
-
 .recommBtn{
   border: 1px solid gray;
   background: none;
@@ -25,11 +21,21 @@
   box-shadow: 1px 1px teal;
 }
 
+.voteToggleCmt{
+  flex-shrink: 0;
+  border: 1px solid gray;
+  background: none;
+  padding:3 5px;
+  font-size: 4px;
+}
 
 .voteContent{
   flex-basis: 100%;
   width: 100%;
+  display: inline-block;
   word-wrap: break-word;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .voteDate{
@@ -39,6 +45,6 @@
 }
 
 .VoteTool{
-  flex-basis: 100%;
   text-align: right;
+  flex-grow: 1;
 }
