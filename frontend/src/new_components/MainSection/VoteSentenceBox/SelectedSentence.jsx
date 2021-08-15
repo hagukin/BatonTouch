@@ -4,5 +4,7 @@ class SelectedSentence extends React.Component {
     console.log("hello");
     return <p className="voteContent">{this.props.text}</p>;
   }
+
+  handleOnMouseOver = () => {};
 }
 export default SelectedSentence;
