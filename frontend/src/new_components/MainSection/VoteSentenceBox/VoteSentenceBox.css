@@ -30,12 +30,26 @@
 }
 
 .voteContent{
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 20px;
   flex-basis: 100%;
   width: 100%;
   display: inline-block;
   word-wrap: break-word;
-  margin-top: 0;
+  margin-top: 4px;
   margin-bottom: 10px;
+}
+
+.voteContentCmt{
+  flex-basis: 100%;
+  width: 100%;
+  display: inline-block;
+  word-wrap: break-word;
+  margin-left: 2px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  color: gray;  
+  font-size: 7px;
 }
 
 .voteDate{
@@ -48,3 +62,6 @@
   text-align: right;
   flex-grow: 1;
 }
+
+
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
