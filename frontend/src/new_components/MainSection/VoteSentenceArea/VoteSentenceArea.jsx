@@ -32,7 +32,7 @@ class VoteSentenceArea extends React.Component {
         writer: "ㅇㅇ",
         title: "mysql1",
         content: "2020년",
-        comment: "",
+        comment: "afdfsdf",
         date: "2020-08-01T11:30:57.618483Z",
         upvote: 10,
         downvote: 0,
@@ -44,7 +44,7 @@ class VoteSentenceArea extends React.Component {
         writer: "ㅇㅇ",
         title: "mysql1",
         content: "2020년",
-        comment: "",
+        comment: "123",
         date: "2020-08-01T11:30:57.618483Z",
         upvote: 10,
         downvote: 0,
@@ -56,7 +56,7 @@ class VoteSentenceArea extends React.Component {
         writer: "ㅇㅇ",
         title: "mysql1",
         content: "2020년",
-        comment: "",
+        comment: "sefase",
         date: "2020-08-01T11:30:57.618483Z",
         upvote: 10,
         downvote: 0,
@@ -68,7 +68,7 @@ class VoteSentenceArea extends React.Component {
         writer: "ㅇㅇ",
         title: "mysql1",
         content: "2020년",
-        comment: "",
+        comment: "46easdf",
         date: "2020-08-01T11:30:57.618483Z",
         upvote: 10,
         downvote: 0,
@@ -80,7 +80,7 @@ class VoteSentenceArea extends React.Component {
         writer: "ㅇㅇ",
         title: "mysql1",
         content: "2020년",
-        comment: "",
+        comment: "efqefse",
         date: "2020-08-01T11:30:57.618483Z",
         upvote: 109999,
         downvote: 0,
@@ -92,7 +92,7 @@ class VoteSentenceArea extends React.Component {
         writer: "ㅇㅇ",
         title: "mysql1",
         content: "2020년",
-        comment: "",
+        comment: "awda",
         date: "2020-08-01T11:30:57.618483Z",
         upvote: 10,
         downvote: 0,
@@ -104,7 +104,7 @@ class VoteSentenceArea extends React.Component {
         writer: "ㅇㅇ",
         title: "mysql1",
         content: "2020년",
-        comment: "",
+        comment: "sdfds",
         date: "2020-08-01T11:30:57.618483Z",
         upvote: 10,
         downvote: 0,
@@ -116,7 +116,7 @@ class VoteSentenceArea extends React.Component {
         writer: "ㅇㅇ",
         title: "mysql1",
         content: "10번째",
-        comment: "",
+        comment: "sdf",
         date: "2020-08-01T11:30:57.618483Z",
         upvote: 10,
         downvote: 0,
@@ -128,7 +128,7 @@ class VoteSentenceArea extends React.Component {
         writer: "ㅇㅇ",
         title: "mysql1",
         content: "2020년",
-        comment: "",
+        comment: "esfa",
         date: "2020-08-01T11:30:57.618483Z",
         upvote: 10,
         downvote: 0,
@@ -140,7 +140,7 @@ class VoteSentenceArea extends React.Component {
         writer: "ㅇㅇ",
         title: "mysql1",
         content: "12번째",
-        comment: "",
+        comment: "12312",
         date: "2020-08-01T11:30:57.618483Z",
         upvote: 10,
         downvote: 0,
@@ -152,7 +152,7 @@ class VoteSentenceArea extends React.Component {
         writer: "ㅇㅇ",
         title: "mysql1",
         content: "13번째",
-        comment: "",
+        comment: "eifjosei",
         date: "2020-08-01T11:30:57.618483Z",
         upvote: 1100,
         downvote: 0,
@@ -182,8 +182,9 @@ class VoteSentenceArea extends React.Component {
           <SearchButton prev page={this.state.page} length={data.length} onClick={this.handleOnClick} />
           <SearchButton next page={this.state.page} length={data.length} onClick={this.handleOnClick} />
           <span className="prevArrow">{"<"}</span>
+          <span>{this.state.page + 1}</span>
           <span className="nextArrow">{">"}</span>
-        </div>  
+        </div>
       </div>
     );
   }
