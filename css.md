@@ -1,9 +1,13 @@
 상단 
     logo 
-        titleName
+        titleWrapper
+            titleName
+            subtitleName
 
-    ccountInfo
+    accountInfo
         login
+            loginText
+            loginPage
 
     navwrapper - 배경색
         navigation

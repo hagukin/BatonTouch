@@ -1,3 +1,80 @@
 header {
   border-bottom: solid 1px royalblue;
 }
+
+.titleName{
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 3px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.subtitleName{
+  text-align: center;
+  font-size: 13px;
+  color: gray;
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+.accountInfo{
+  height: 20px;
+  overflow: visible;
+}
+
+.login{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow: visible;
+}
+
+.loginText{
+  font-size: 8px;
+  color: gray;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.loginPage{
+  visibility: hidden;
+  margin-top: 10px;
+  border: solid 2px skyblue;
+  border-radius: 5px;
+  padding: 2px 10px; 
+  width: 170px;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.loginPage:hover{
+  visibility: visible;
+}
+
+.loginPage:focus{
+  visibility: visible;
+}
+
+.loginText:focus ~ .loginPage{
+  visibility: visible;
+}
+
+
+
+.loginPage span{
+  flex-basis: 100%;
+  margin: 2px 0px;
+}
+
+.loginPage input{
+  flex-basis: 100%;
+  margin: 2px 0px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
