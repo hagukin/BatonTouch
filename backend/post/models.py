@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 
 class Post(models.Model):
@@ -16,10 +18,10 @@ class Post(models.Model):
     title = models.CharField(max_length=50, default="")
     content = models.CharField(max_length=130, default="")
     comment = models.CharField(max_length=50, default="")
-    date = models.DateTimeField()
+    date = models.DateTimeField(default=datetime.datetime.now())
     upvote = models.IntegerField(default=0)
     downvote = models.IntegerField(default=0)
-    position = models.IntegerField()
+    position = models.IntegerField(default=0) # TODO: 포지션값 동적으로 받아와야함.
     end_story = models.BooleanField(default=False)
 
     def __str__(self):
