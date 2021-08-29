@@ -171,7 +171,7 @@ class VoteSentenceArea extends React.Component {
     return (
       <div className="voteWrapper">
         <select className="voteOrder" name="select_order" onChange={this.handleOnChangeSelect}>
-          <option value="register" selected>
+          <option value="register" defaultValue>
             등록순
           </option>
           <option value="date">날짜순</option>
@@ -207,7 +207,9 @@ class VoteSentenceArea extends React.Component {
 
   async getSentence() {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/");
+      const res = await fetch("http://127.0.0.1:8000/api/", {
+        method: "GET",
+      });
       const posts = await res.json();
       return posts;
     } catch (e) {

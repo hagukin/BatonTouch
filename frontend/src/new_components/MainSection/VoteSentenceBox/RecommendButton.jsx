@@ -19,13 +19,41 @@ class RecommendButton extends React.Component {
   handleOnClick = () => {
     if (this.props.upVote) {
       console.log("따봉!");
-      // PATCH upvote
+      this.upvote();
     } else if (this.props.downVote) {
       console.log("fuckU");
-      // PATCH downvote
+      this.downvote();
     }
     this.props.onVote();
   };
+
+  async upvote() {
+    try {
+      const res = await fetch("upvote api", {
+        method: "POST",
+      });
+      const data = await res.json();
+      console.log("data");
+      console.log(data);
+    } catch (e) {
+      console.log("에러");
+      console.log(e);
+    }
+  }
+
+  async downvote() {
+    try {
+      const res = await fetch("downvote api", {
+        method: "POST",
+      });
+      const data = await res.json();
+      console.log("data");
+      console.log(data);
+    } catch (e) {
+      console.log("에러");
+      console.log(e);
+    }
+  }
 }
 
 export default RecommendButton;

@@ -3,25 +3,6 @@ import Sentence from "./Sentence";
 import "./ReadSentenceArea.css";
 
 class ReadSentenceArea extends React.Component {
-  // constructor(props) {
-  //   this.state = {
-  //     posts,
-  //   };
-  // }
-  // GET 등록된 문장 데이터
-  // async componentDidMount() {
-  //   try {
-  //     const res = await fetch("http://127.0.0.1:8000/api/");
-  //     const posts = await res.json();
-  //     this.setState({
-  //       posts,
-  //     });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  //   console.log(this.state.posts);
-  // }
-
   render() {
     // GET fetch
     // const data = this.getSentence();
@@ -40,7 +21,6 @@ class ReadSentenceArea extends React.Component {
       },
     ];
 
-    console.log("redas");
     if (!this.props.show) {
       return (
         <div className="ReadSentenceArea">
@@ -77,7 +57,9 @@ class ReadSentenceArea extends React.Component {
     let res;
     let posts;
     try {
-      res = await fetch("http://127.0.0.1:8000/api/novel");
+      res = await fetch("http://127.0.0.1:8000/api/novel", {
+        method: "GET",
+      });
       posts = await res.json();
     } catch (e) {
       console.log(e);
