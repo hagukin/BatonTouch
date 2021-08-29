@@ -7,18 +7,18 @@ class ReadSentenceArea extends React.Component {
     // GET fetch
     // const data = this.getSentence();
     const data = [
-      {
-        id: 2,
-        writer: "ㅇㅇ",
-        title: "mysql1",
-        content: "2020년sssss",
-        comment: "",
-        date: "2020-08-01T11:30:57.618483Z",
-        upvote: 10,
-        downvote: 0,
-        position: 0,
-        end_story: false,
-      },
+      // {
+      //   id: 2,
+      //   writer: "ㅇㅇ",
+      //   title: "mysql1",
+      //   content: "2020년sssss",
+      //   comment: "",
+      //   date: "2020-08-01T11:30:57.618483Z",
+      //   upvote: 10,
+      //   downvote: 0,
+      //   position: 0,
+      //   end_story: false,
+      // },
     ];
 
     if (!this.props.show) {
@@ -41,9 +41,9 @@ class ReadSentenceArea extends React.Component {
       // }
       return (
         <div className="ReadSentenceArea">
-          <Sentence text={"aaaaaaaaaaaaaaaaa"} />
-          <Sentence text={"bbbbbbbbbbbbbbbbb"} />
-          <Sentence text={"ccccccccccccccccc"} />
+          <Sentence text={"어느 화창한 아침."} />
+          <Sentence text={"한 아이가 소리쳤습니다."} />
+          <Sentence text={'"저길 봐!"'} />
           {data.slice(data.length < this.props.show ? 0 : data.length - this.props.show).map((obj) => (
             <Sentence key={obj.id} text={obj.content} />
           ))}
